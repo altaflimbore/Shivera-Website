@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import privacyIllustration from '../Images/2.png'
+import privacyIllustration from '../images/2.png'
 
 const SolutionDetail = () => {
   const { slug } = useParams()
