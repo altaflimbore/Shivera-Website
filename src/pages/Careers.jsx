@@ -4,7 +4,7 @@ const Careers = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-navy to-primary-teal text-white py-16">
+      <section className="text-white py-16" style={{background: 'linear-gradient(135deg, #0A1F44 0%, #1E3A6D 50%, #274C8E 100%)', boxShadow: 'inset 0 -10px 30px rgba(0,0,0,0.15)'}}>
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Careers</h1>
           <p className="text-xl text-gray-200 max-w-3xl">
@@ -33,19 +33,19 @@ const Careers = () => {
                 'Training & Development',
                 'Business Development',
               ].map((role, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <div className="text-primary-teal font-semibold">{role}</div>
+                <div key={index} className="bg-[#F4F7FC] rounded-lg p-4 border border-[#D8E2F0] hover:border-[#1E4E8C] hover:bg-[#E6ECF7] transition-all duration-300 cursor-pointer shadow-sm">
+                  <div className="text-[#0A1F44] font-semibold hover:text-[#1E4E8C]">{role}</div>
                 </div>
               ))}
             </div>
-            <div className="bg-gradient-to-br from-primary-teal to-primary-navy text-white rounded-xl p-8 shadow-lg">
+            <div style={{background: 'linear-gradient(135deg, #0A1F44 0%, #1E3A6D 50%, #274C8E 100%)', boxShadow: '0 10px 40px rgba(10, 31, 68, 0.15)'}} className="text-white rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Stay Connected With Us</h3>
               <p className="text-gray-100 mb-6">
                 Send us your resume and we'll keep you informed about upcoming opportunities that match your profile.
               </p>
               <Link
                 to="/contact"
-                className="inline-block bg-white text-primary-navy px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-md hover:shadow-lg"
+                className="inline-block bg-white text-[#0A1F44] px-8 py-3 rounded-lg font-semibold hover:bg-[#E6ECF7] transition-all shadow-md hover:shadow-lg"
               >
                 📧 Send Your Resume
               </Link>
@@ -71,7 +71,7 @@ const Careers = () => {
                     Experience: 6+ Years · Job Type: Full-Time · Location: India / Hybrid
                   </p>
                 </div>
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary-teal text-white">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#1B3A6B] text-white shadow-sm">
                   Open Position
                 </span>
               </div>
@@ -105,7 +105,10 @@ const Careers = () => {
               <div className="text-center">
                 <Link
                   to="/contact"
-                  className="inline-block bg-primary-teal text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-md hover:shadow-lg"
+                  className="inline-block px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0.5"
+                  style={{background: 'linear-gradient(135deg, #1E4E8C, #274C8E)', color: 'white', boxShadow: '0 10px 25px rgba(10, 31, 68, 0.2)'}}
+                  onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #274C8E, #325FAE)'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #1E4E8C, #274C8E)'}
                 >
                   📧 Apply / Share Your Profile
                 </Link>

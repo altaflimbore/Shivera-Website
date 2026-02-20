@@ -168,7 +168,7 @@ const SolutionDetail = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-navy to-primary-teal text-white py-16">
+      <section className="text-white py-16" style={{background: 'linear-gradient(135deg, #0A1F44, #1B3A6B, #274C8E)'}}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center mb-4">
             <Link to="/solutions" className="text-gray-200 hover:text-white mr-4">
@@ -231,11 +231,14 @@ const SolutionDetail = () => {
           <Link
             to="/contact"
             className="
-px-8 py-4 rounded-full font-semibold text-lg
-bg-primary-teal text-white
-hover:bg-teal-600
-transition-all duration-300
-shadow-lg hover:shadow-2xl
+mt-6 px-6 py-3 rounded-lg font-semibold
+bg-gradient-to-r from-[#0F2A5C] to-[#1E3A8A]
+text-white
+transition-all duration-300 ease-in-out
+inline-flex items-center gap-2
+shadow-md hover:shadow-xl
+hover:-translate-y-[2px]
+hover:from-[#1E3A8A] hover:to-[#1D4ED8]
 "
           >
             📅 Schedule a Consultation

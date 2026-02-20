@@ -49,7 +49,7 @@ const Testimonials = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-navy to-primary-teal text-white py-16">
+      <section className="bg-[#0A1F44] text-white py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Testimonials</h1>
           <p className="text-xl text-gray-200 max-w-3xl">
@@ -86,7 +86,7 @@ const Testimonials = () => {
               <div className="flex justify-between items-center mt-8">
                 <button
                   onClick={prevTestimonial}
-                  className="bg-primary-teal text-white p-3 rounded-full hover:bg-opacity-90 transition-all shadow-md"
+                  className="bg-[#1E4E8C] text-white p-3 rounded-full hover:bg-[#274C8E] transition-all shadow-md"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -98,14 +98,14 @@ const Testimonials = () => {
                       key={index}
                       onClick={() => setCurrentIndex(index)}
                       className={`w-3 h-3 rounded-full transition-all ${
-                        index === currentIndex ? 'bg-primary-teal' : 'bg-gray-300'
+                        index === currentIndex ? 'bg-[#1E4E8C]' : 'bg-gray-300'
                       }`}
                     />
                   ))}
                 </div>
                 <button
                   onClick={nextTestimonial}
-                  className="bg-primary-teal text-white p-3 rounded-full hover:bg-opacity-90 transition-all shadow-md"
+                  className="bg-[#1E4E8C] text-white p-3 rounded-full hover:bg-[#274C8E] transition-all shadow-md"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -146,7 +146,7 @@ const Testimonials = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-primary-navy to-primary-teal text-white">
+      <section style={{background: 'linear-gradient(135deg, #0A1F44 0%, #1E3A6D 50%, #274C8E 100%)', boxShadow: '0 10px 40px rgba(10, 31, 68, 0.15)'}} className="py-16 text-white">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Join Our Success Stories?
@@ -156,14 +156,10 @@ const Testimonials = () => {
           </p>
           <Link
             to="/contact"
-            className="
-px-8 py-4 rounded-full font-semibold text-lg
-bg-primary-teal text-white
-hover:bg-teal-600
-transition-all duration-300
-shadow-lg hover:shadow-2xl
-"
-
+            className="inline-block px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:-translate-y-0.5"
+            style={{background: 'linear-gradient(135deg, #1E4E8C, #274C8E)', color: 'white', boxShadow: '0 10px 25px rgba(10, 31, 68, 0.2)'}}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #274C8E, #325FAE)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #1E4E8C, #274C8E)'}
           >
             📅 Schedule a Consultation
           </Link>

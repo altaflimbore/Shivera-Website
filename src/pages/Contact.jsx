@@ -1,4 +1,5 @@
 import { useState } from "react"
+import contactBg from "../assets/generated/contact-secure-communication-bg.png"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -51,7 +52,7 @@ const Contact = () => {
   return (
     <div className="pt-20">
       {/* ✅ Hero Section */}
-      <section className="bg-gradient-to-br from-primary-navy to-primary-teal text-white py-16">
+      <section className="bg-[#0A1F44] text-white py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Contact Us
@@ -65,23 +66,29 @@ const Contact = () => {
 
       {/* ✅ Contact Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="container mx-auto px-4 lg:px-8 relative">
+          <img
+            src={contactBg}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute right-0 top-[520px] hidden lg:block w-[760px] max-w-none opacity-20"
+          />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
             {/* ================= Contact Info ================= */}
             <div>
-              <h2 className="text-3xl font-bold text-primary-navy mb-6">
+              <h2 className="text-3xl font-bold mb-6" style={{color: '#0A1F44', fontWeight: '600'}}>
                 Get In Touch
               </h2>
 
               <div className="space-y-6">
                 {/* Contact Person */}
                 <div className="flex items-start">
-                  <div className="bg-primary-teal rounded-lg p-3 mr-4">
+                  <div className="rounded-lg p-3 mr-4 transition-all duration-300" style={{backgroundColor: '#E6ECF7'}}>
                     👤
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-navy mb-1">
+                    <h3 className="font-semibold mb-1" style={{color: '#0A1F44', fontWeight: '600'}}>
                       Contact Person
                     </h3>
                     <p className="text-gray-700">
@@ -92,40 +99,40 @@ const Contact = () => {
 
                 {/* Phone */}
                 <div className="flex items-start">
-                  <div className="bg-primary-teal rounded-lg p-3 mr-4">
+                  <div className="rounded-lg p-3 mr-4 transition-all duration-300" style={{backgroundColor: '#E6ECF7'}}>
                     📞
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-navy mb-1">
+                    <h3 className="font-semibold mb-1" style={{color: '#0A1F44', fontWeight: '600'}}>
                       Phone
                     </h3>
                     <a
-                      href="tel:80878250238"
-                      className="text-gray-700 hover:text-primary-teal block"
+                      href="tel:8087250238"
+                      className="text-gray-700 hover:text-[#1E4E8C] block"
                     >
-                      80878250238
+                      8087250238
                     </a>
                     <a
-                      href="tel:78878888171"
-                      className="text-gray-700 hover:text-primary-teal block"
+                      href="tel:7887888171"
+                      className="text-gray-700 hover:text-[#1E4E8C] block"
                     >
-                      78878888171
+                      7887888171
                     </a>
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="flex items-start">
-                  <div className="bg-primary-teal rounded-lg p-3 mr-4">
+                  <div className="rounded-lg p-3 mr-4 transition-all duration-300" style={{backgroundColor: '#E6ECF7'}}>
                     ✉️
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-navy mb-1">
+                    <h3 className="font-semibold mb-1" style={{color: '#0A1F44', fontWeight: '600'}}>
                       Email
                     </h3>
                     <a
                       href="mailto:info@shiverainfotech.com"
-                      className="text-gray-700 hover:text-primary-teal"
+                      className="text-gray-700 hover:text-[#1E4E8C]"
                     >
                       info@shiverainfotech.com
                     </a>
@@ -134,11 +141,11 @@ const Contact = () => {
 
                 {/* Address */}
                 <div className="flex items-start">
-                  <div className="bg-primary-teal rounded-lg p-3 mr-4">
+                  <div className="rounded-lg p-3 mr-4 transition-all duration-300" style={{backgroundColor: '#E6ECF7'}}>
                     📍
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-navy mb-1">
+                    <h3 className="font-semibold mb-1" style={{color: '#0A1F44', fontWeight: '600'}}>
                       Address
                     </h3>
                     <p className="text-gray-700">
@@ -158,7 +165,7 @@ const Contact = () => {
 
             {/* ================= Contact Form ================= */}
             <div>
-              <h2 className="text-3xl font-bold text-primary-navy mb-6">
+              <h2 className="text-3xl font-bold mb-6" style={{color: '#0A1F44', fontWeight: '600'}}>
                 Schedule a Consultation
               </h2>
 
@@ -187,7 +194,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your full name"
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-teal"
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#1E4E8C]"
                     />
                   </div>
 
@@ -203,7 +210,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your email"
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-teal"
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#1E4E8C]"
                     />
                   </div>
 
@@ -219,7 +226,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Enter your phone number"
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-teal"
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#1E4E8C]"
                     />
                   </div>
 
@@ -233,7 +240,7 @@ const Contact = () => {
                       required
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-teal"
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#1E4E8C]"
                     >
                       <option value="">Select a service</option>
                       {services.map((service) => (
@@ -256,21 +263,23 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell us about your requirements"
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-teal"
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#1E4E8C]"
                     />
                   </div>
 
                   {/* ✅ Updated Premium Submit Button */}
                   <button
                     type="submit"
-                    className="
-                      w-full flex justify-center items-center gap-2
-                      px-6 py-3 rounded-full font-semibold text-lg
-                      text-green-800 border border-green-800
-                      hover:bg-green-800 hover:text-white
-                      transition-all duration-300
-                      shadow-sm hover:shadow-lg
-                    "
+                    className="w-full flex justify-center items-center gap-2 px-6 py-3 rounded-lg font-semibold text-lg text-white transition-all duration-300 transform hover:-translate-y-0.5"
+                    style={{background: 'linear-gradient(135deg, #0A1F44, #1E4E8C)', boxShadow: '0 8px 20px rgba(10, 31, 68, 0.25)'}}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'linear-gradient(135deg, #1E4E8C, #274C8E)';
+                      e.currentTarget.style.boxShadow = '0 12px 24px rgba(10, 31, 68, 0.35)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'linear-gradient(135deg, #0A1F44, #1E4E8C)';
+                      e.currentTarget.style.boxShadow = '0 8px 20px rgba(10, 31, 68, 0.25)';
+                    }}
                   >
                     📅 Submit & Schedule Consultation
                   </button>

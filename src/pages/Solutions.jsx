@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
-import privacyIllustration from '../images/2.png'
+import genCyberIcon from '../assets/generated/icon-cybersecurity-isms.png'
+import genDpdpIcon from '../assets/generated/icon-data-privacy-dpdp.png'
+import genIsoIcon from '../assets/generated/icon-iso-certifications.png'
+import genPoshIcon from '../assets/generated/icon-posh-compliance.png'
 
 const Solutions = () => {
   const solutions = [
@@ -7,6 +10,7 @@ const Solutions = () => {
       title: 'Cybersecurity & ISMS',
       description: 'Comprehensive information security management systems, risk assessments, and incident readiness.',
       icon: '🛡️',
+      image: genCyberIcon,
       slug: 'cybersecurity-isms',
       features: ['ISO 27001 Implementation', 'Risk Assessments', 'Incident Readiness', 'SOC Support'],
     },
@@ -14,7 +18,7 @@ const Solutions = () => {
       title: 'Data Privacy & Governance',
       description: 'DPDP compliance consulting, data privacy program execution, and data protection audits.',
       icon: '🔒',
-      image: privacyIllustration,
+      image: genDpdpIcon,
       slug: 'data-privacy-governance',
       features: ['DPDP Compliance', 'Data Privacy Program Execution', 'Data Protection Audits', 'DPO-as-a-Service'],
     },
@@ -36,6 +40,7 @@ const Solutions = () => {
       title: 'ISO Certifications',
       description: 'End-to-end ISO certification journeys with audit-ready implementation support.',
       icon: '✅',
+      image: genIsoIcon,
       slug: 'iso-certifications',
       features: ['ISO 9001', 'ISO 14001', 'ISO 27001', 'ISO 27701'],
     },
@@ -43,6 +48,7 @@ const Solutions = () => {
       title: 'POSH & Legal Compliance',
       description: 'Prevention of Sexual Harassment awareness sessions, IC training, and policy drafting.',
       icon: '⚖️',
+      image: genPoshIcon,
       slug: 'posh-legal-compliance',
       features: ['Awareness Sessions', 'IC Training', 'Policy Drafting', 'Reporting Support'],
     },
@@ -58,7 +64,7 @@ const Solutions = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-navy to-primary-teal text-white py-16">
+      <section className="bg-[#0A1F44] text-white py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Solutions</h1>
           <p className="text-xl text-gray-200 max-w-3xl">
@@ -116,7 +122,7 @@ const Solutions = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-primary-navy to-primary-teal text-white">
+      <section className="py-16 text-white" style={{background: 'linear-gradient(135deg, #0A1F44, #1E4E8C)'}}>
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Need a Custom Solution?
@@ -127,13 +133,13 @@ const Solutions = () => {
           <Link
             to="/contact"
             className="
-px-8 py-4 rounded-full font-semibold text-lg
-bg-primary-teal text-white
-hover:bg-teal-600
-transition-all duration-300
-shadow-lg hover:shadow-2xl
-"
-
+            px-8 py-4 rounded-full font-semibold text-lg text-white
+            bg-[#1E4E8C]
+            hover:bg-[#2C5FA8]
+            transition-all duration-300
+            shadow-lg hover:shadow-2xl
+            ring-2 ring-[#1E4E8C] ring-opacity-50 hover:ring-opacity-100
+            "
           >
             📅 Schedule a Consultation
           </Link>

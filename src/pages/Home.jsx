@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import heroBanner from "../assets/generated/shivera-hero-banner.png"
 
 const Home = () => {
   const solutions = [
@@ -89,15 +90,32 @@ const Home = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-navy via-primary-navy to-primary-teal text-white py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#0A1F44] text-white py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-primary-teal rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-64 h-64 bg-[#1E4E8C] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#112B5C] rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Premium hero visual (non-intrusive, no layout shift) */}
+        {/* Background image for desktop */}
+        <div className="hidden lg:block absolute inset-0" style={{backgroundImage: `linear-gradient(rgba(10,31,68,0.85), rgba(10,31,68,0.85)), url(${heroBanner})`, backgroundPosition: 'right center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}></div>
+
+        {/* Background image for mobile */}
+        <div className="block lg:hidden absolute inset-0" style={{backgroundImage: `linear-gradient(rgba(10,31,68,0.85), rgba(10,31,68,0.85)), url(${heroBanner})`, backgroundPosition: 'center top', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}></div>
+
+        {/* Subtle cybersecurity illustration */}
+        <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block">
+          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 20 L150 50 L150 120 Q150 140 130 150 L100 160 L70 150 Q50 140 50 120 L50 50 Z" fill="#1E4E8C" stroke="#0A1F44" strokeWidth="2"/>
+            <circle cx="100" cy="100" r="20" fill="#0A1F44"/>
+            <rect x="90" y="85" width="20" height="30" fill="#1E4E8C"/>
+            <circle cx="100" cy="125" r="5" fill="#0A1F44"/>
+          </svg>
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fadeIn">
-            <div className="inline-block mb-6">
+            <div className="inline-block mb-8">
               <div className="flex items-center justify-center space-x-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-3">
                 <span className="text-sm font-semibold">
                   Enterprise Trusted
@@ -105,25 +123,25 @@ const Home = () => {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               Empowering Organizations with Trusted IT, Data Privacy, and
               Compliance Solutions
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
               We help enterprises achieve secure, compliant, and sustainable
               growth through expert-led cybersecurity, data privacy, and
               regulatory compliance services.
             </p>
 
             {/* ✅ Updated Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Link
                 to="/contact"
                 className="
-                px-8 py-4 rounded-full font-semibold text-lg
-                bg-primary-teal text-white
-                hover:bg-teal-600
+                px-8 py-4 rounded-full font-semibold text-lg text-white
+                bg-gradient-to-r from-[#1E4E8C] to-[#0A1F44]
+                hover:from-[#2E5E9C] hover:to-[#1A2F54]
                 transition-all duration-300
                 shadow-lg hover:shadow-2xl
                 "
@@ -132,30 +150,53 @@ const Home = () => {
                 📅 Schedule a Consultation
               </Link>
 
-              <Link
-                to="/solutions"
+              <a
+                href="https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa?pageTitle=Digital-Personal-Data-Protection-Rules-2025"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   px-8 py-4 rounded-full font-semibold text-lg
-                  text-white border border-white
-                  hover:bg-white hover:text-primary-navy
+                  text-white border-2 border-[#0A1F44]
+                  bg-transparent
+                  hover:bg-[#0A1F44] hover:text-white
                   transition-all duration-300
                   shadow-sm hover:shadow-lg
-                  flex items-center justify-center gap-2
                 "
               >
-                Explore Our Solutions →
-              </Link>
+                Learn More About DPDP Act
+              </a>
+
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSckn3ntQ7YASnyQnRQbzrTroaosDIo5P19ZCAaepyQYYvcV4g/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  px-8 py-4 rounded-full font-semibold text-lg text-white
+                  bg-gradient-to-r from-[#0A1F44] to-[#4682B4]
+                  hover:from-[#1A2F54] hover:to-[#5682C4]
+                  transition-all duration-300
+                  shadow-lg hover:shadow-2xl
+                  ring-2 ring-[#0A1F44] ring-opacity-50 hover:ring-opacity-100
+                "
+              >
+                Assess Your Compliance Gap Score
+              </a>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-              {["Audit Ready", "Regulator Aligned", "Enterprise Trusted", "20+ Years Expertise"].map(
-                (text, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+              {[
+                { icon: "🛡️", text: "Audit Ready" },
+                { icon: "⚖️", text: "Regulator Aligned" },
+                { icon: "🏢", text: "Enterprise Trusted" },
+                { icon: "🏆", text: "20+ Years Expertise" }
+              ].map(
+                ({ icon, text }, i) => (
                   <div
                     key={i}
-                    className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4"
+                    className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-20 transition-all duration-300"
                   >
-                    <div className="text-2xl mb-2">✔</div>
+                    <div className="text-3xl mb-2">{icon}</div>
                     <div className="text-sm font-semibold">{text}</div>
                   </div>
                 )
@@ -166,7 +207,7 @@ const Home = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-navy to-primary-teal text-white">
+      <section className="py-20 bg-[#0A1F44] text-white">
         <div className="content-container text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to strengthen your IT and compliance foundation?
@@ -181,14 +222,12 @@ const Home = () => {
           <Link
             to="/contact"
             className="
-px-8 py-4 rounded-full font-semibold text-lg
-bg-primary-teal text-white
-hover:bg-teal-600
-transition-all duration-300
-shadow-lg hover:shadow-2xl
-"
-
-            
+            px-8 py-4 rounded-full font-semibold text-lg text-white
+            bg-gradient-to-r from-[#1E4E8C] to-[#0A1F44]
+            hover:from-[#2E5E9C] hover:to-[#1A2F54]
+            transition-all duration-300
+            shadow-lg hover:shadow-2xl
+            "
           >
             📅 Schedule a Consultation
           </Link>

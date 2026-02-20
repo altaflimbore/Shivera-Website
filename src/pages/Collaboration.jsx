@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import whyUsBanner from "../assets/generated/whyus-impact-banner.png"
 
 const Collaboration = () => {
   const partners = [
@@ -31,7 +32,7 @@ const Collaboration = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-navy to-primary-teal text-white py-16">
+      <section className="bg-[#0A1F44] text-white py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Why Us</h1>
           <p className="text-xl text-gray-200 max-w-3xl">
@@ -151,6 +152,12 @@ const Collaboration = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
+            <img
+              src={whyUsBanner}
+              alt=""
+              aria-hidden="true"
+              className="w-full max-w-5xl mx-auto mb-10 rounded-2xl shadow-lg hidden md:block"
+            />
             <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-10">
               Compliance Impact at Scale
             </h2>
@@ -166,7 +173,7 @@ const Collaboration = () => {
                   key={index}
                   className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
                 >
-                  <h3 className="text-3xl font-bold text-primary-teal mb-2">
+                  <h3 className="text-3xl font-bold text-[#1E4E8C] mb-2">
                     {stat.number}
                   </h3>
                   <p className="text-gray-700 font-medium">{stat.label}</p>
@@ -212,7 +219,7 @@ const Collaboration = () => {
                   key={index}
                   className="bg-white rounded-xl p-6 shadow-md flex gap-6 items-start"
                 >
-                  <div className="text-2xl font-bold text-primary-teal">
+                  <div className="text-2xl font-bold text-[#1E4E8C]">
                     {item.step}
                   </div>
                   <div>
@@ -245,17 +252,20 @@ const Collaboration = () => {
               {partners.map((partner, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all"
+                  className="bg-[#F8FAFC] rounded-xl p-8 border border-[#E2E8F0] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="text-5xl mb-4">{partner.icon}</div>
-                  <h3 className="text-2xl font-bold text-primary-navy mb-3">
+                  <h3 className="text-2xl font-bold text-[#0A1F44] mb-3">
                     {partner.name}
                   </h3>
                   <p className="text-gray-600 mb-6">{partner.description}</p>
 
                   <Link
                     to="/contact"
-                    className="inline-flex items-center bg-primary-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+                    className="inline-flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0.5"
+                    style={{background: 'linear-gradient(135deg, #1E4E8C, #274C8E)', color: 'white', boxShadow: '0 10px 25px rgba(10, 31, 68, 0.2)'}}
+                    onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #274C8E, #325FAE)'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #1E4E8C, #274C8E)'}
                   >
                     ➡ Connect With Partner
                   </Link>
@@ -267,7 +277,7 @@ const Collaboration = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-primary-navy to-primary-teal text-white">
+      <section className="py-16 text-white" style={{background: 'linear-gradient(135deg, #0A1F44, #2C5FA8)'}}>
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Work With Us?
@@ -280,13 +290,12 @@ const Collaboration = () => {
           <Link
             to="/contact"
             className="
-px-8 py-4 rounded-full font-semibold text-lg
-bg-primary-teal text-white
-hover:bg-teal-600
-transition-all duration-300
-shadow-lg hover:shadow-2xl
-"
-
+            px-8 py-4 rounded-full font-semibold text-lg
+            bg-white text-[#0A1F44]
+            hover:bg-[#E5ECF7]
+            transition-all duration-300
+            shadow-lg hover:shadow-2xl
+            "
           >
             📅 Schedule a Consultation
           </Link>

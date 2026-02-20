@@ -22,36 +22,27 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // ✅ Close Dropdown When Clicking Outside
+  // ✅ Close Dropdown Outside Click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setActiveDropdown(null)
       }
     }
+
     document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-      if (closeTimeoutRef.current) {
-        clearTimeout(closeTimeoutRef.current)
-      }
-    }
+    return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
   const openDropdown = (name) => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current)
-    }
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
     setActiveDropdown(name)
   }
 
-  const scheduleCloseDropdown = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current)
-    }
+  const closeDropdown = () => {
     closeTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null)
-    }, 120)
+    }, 150)
   }
 
   const isActive = (path) => location.pathname === path
@@ -68,12 +59,12 @@ const Header = () => {
   ]
 
   const trainingItems = [
-    { name: "Cybersecurity Training" },
-    { name: "Data Privacy Training" },
-    { name: "Certified DPO Training" },
-    { name: "POSH Training" },
-    { name: "ISO Training Programs" },
-    { name: "Data Engineering Training" },
+    { name: "Cybersecurity Training", slug: "cybersecurity-training" },
+    { name: "Data Privacy Training", slug: "data-privacy-training" },
+    { name: "Certified DPO Training", slug: "certified-dpo-training" },
+    { name: "POSH Training", slug: "posh-training" },
+    { name: "ISO Training Programs", slug: "iso-training-programs" },
+    { name: "Data Engineering Training", slug: "data-engineering-training" },
   ]
 
   return (
@@ -87,25 +78,15 @@ const Header = () => {
       {/* ✅ Top Info Bar */}
       <div className="bg-primary-navy text-white text-xs sm:text-sm">
         <div className="container mx-auto px-4 lg:px-8 py-2">
-          {/* Desktop View */}
           <div className="hidden md:flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              📧 <span>info@shiverainfotech.com</span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              📞 <span>80878250238 | 78878888171</span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              📍 <span>Baner-Pashan Link Road, Pune</span>
-            </div>
+            <span>📧 info@shiverainfotech.com</span>
+            <span>📞 8087250238 | 7887888171</span>
+            <span>📍 Baner-Pashan Link Road, Pune</span>
           </div>
 
-          {/* Mobile View */}
           <div className="md:hidden flex flex-col items-center gap-1 text-center">
             <span>📧 info@shiverainfotech.com</span>
-            <span>📞 80878250238 | 78878888171</span>
+            <span>📞 8087250238 | 7887888171</span>
             <span>📍 Baner-Pashan Link Road, Pune</span>
           </div>
         </div>
@@ -114,63 +95,64 @@ const Header = () => {
       {/* ✅ Navbar */}
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* ✅ LOGO */}
-          <Link to="/" className="flex items-center space-x-3">
+
+          {/* ✅ Logo */}
+          <Link to="/" className="flex items-center gap-3">
             <img
               src={logoIcon}
-              alt="Shivera Shield Logo"
+              alt="Logo"
               className="w-12 h-12 object-contain"
             />
-
             <img
               src={logoText}
-              alt="Shivera Infotech Logo"
-              className="h-10 object-contain hidden sm:block"
+              alt="Text Logo"
+              className="h-10 hidden sm:block object-contain"
             />
           </Link>
 
           {/* ✅ Desktop Menu */}
           <div
-            className="hidden lg:flex items-center space-x-6 font-medium"
             ref={dropdownRef}
+            className="hidden lg:flex items-center gap-6 text-sm font-medium whitespace-nowrap"
           >
+            {/* Links */}
             <Link
               to="/"
-              className={`hover:text-primary-teal ${
-                isActive("/") ? "text-primary-teal font-semibold" : "text-gray-700"
-              }`}
+              className={`whitespace-nowrap ${
+                isActive("/") ? "text-[#1E4E8C] font-semibold" : "text-gray-700"
+              } hover:text-[#1E4E8C] transition-colors duration-300`}
             >
               Home
             </Link>
 
             <Link
               to="/about"
-              className={`hover:text-primary-teal ${
+              className={`whitespace-nowrap ${
                 isActive("/about")
-                  ? "text-primary-teal font-semibold"
+                  ? "text-[#1E4E8C] font-semibold"
                   : "text-gray-700"
-              }`}
+              } hover:text-[#1E4E8C] transition-colors duration-300`}
             >
               About Us
             </Link>
 
             {/* Solutions Dropdown */}
             <div
-              className="relative"
+              className="relative whitespace-nowrap"
               onMouseEnter={() => openDropdown("solutions")}
-              onMouseLeave={scheduleCloseDropdown}
+              onMouseLeave={closeDropdown}
             >
-              <button className="hover:text-primary-teal text-gray-700 transition-colors duration-150">
+              <button className="hover:text-[#1E4E8C] text-gray-700 transition-colors duration-300">
                 Solutions ▾
               </button>
 
               {activeDropdown === "solutions" && (
-                <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2 animate-fadeIn origin-top transition-all duration-200">
+                <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2">
                   {solutionsItems.map((item) => (
                     <Link
                       key={item.slug}
                       to={`/solutions/${item.slug}`}
-                      className="block px-4 py-2 text-sm hover:bg-primary-teal hover:text-white transition"
+                      className="block px-4 py-2 text-sm hover:bg-[#1E4E8C] hover:text-white transition-colors duration-300"
                     >
                       {item.name}
                     </Link>
@@ -181,21 +163,21 @@ const Header = () => {
 
             {/* Training Dropdown */}
             <div
-              className="relative"
+              className="relative whitespace-nowrap"
               onMouseEnter={() => openDropdown("training")}
-              onMouseLeave={scheduleCloseDropdown}
+              onMouseLeave={closeDropdown}
             >
-              <button className="hover:text-primary-teal text-gray-700 transition-colors duration-150">
+              <button className="hover:text-[#1E4E8C] text-gray-700 transition-colors duration-300">
                 Training ▾
               </button>
 
               {activeDropdown === "training" && (
-                <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2 animate-fadeIn origin-top transition-all duration-200">
+                <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2">
                   {trainingItems.map((item, index) => (
                     <Link
                       key={index}
-                      to="/training"
-                      className="block px-4 py-2 text-sm hover:bg-primary-teal hover:text-white transition"
+                      to={`/training#${item.slug}`}
+                      className="block px-4 py-2 text-sm hover:bg-[#1E4E8C] hover:text-white transition-colors duration-300"
                     >
                       {item.name}
                     </Link>
@@ -204,53 +186,38 @@ const Header = () => {
               )}
             </div>
 
-            {/* Other Links */}
-            <Link
-              to="/testimonials"
-              className="hover:text-primary-teal text-gray-700"
-            >
+            <Link to="/testimonials" className="hover:text-[#1E4E8C] text-gray-700 whitespace-nowrap transition-colors duration-300">
               Testimonials
             </Link>
 
-            <Link
-              to="/careers"
-              className="hover:text-primary-teal text-gray-700"
-            >
+            <Link to="/careers" className="hover:text-[#1E4E8C] text-gray-700 whitespace-nowrap transition-colors duration-300">
               Careers
             </Link>
 
-            <Link
-              to="/collaboration"
-              className="hover:text-primary-teal text-gray-700"
-            >
+            <Link to="/collaboration" className="hover:text-[#1E4E8C] text-gray-700 whitespace-nowrap transition-colors duration-300">
               Why Us
             </Link>
 
-            <Link
-              to="/contact"
-              className="hover:text-primary-teal text-gray-700"
-            >
-              Contact-Certifications
+            <Link to="/contact" className="hover:text-[#1E4E8C] text-gray-700 whitespace-nowrap transition-colors duration-300">
+              Contact
             </Link>
 
-           {/* ✅ Minimal Premium CTA Button */}
-<Link
-  to="/contact"
-  className="
-px-6 py-2 rounded-full font-semibold
-text-green-800 border border-green-800
-hover:bg-green-800 hover:text-white
-transition-all duration-300
+            {/* ✅ CTA Button */}
+            <Link
+              to="/contact"
+              className="ml-3 px-5 py-2 rounded-lg font-semibold
+border border-[#0A1F44] text-[#0A1F44]
+hover:bg-[#0A1F44] hover:text-white
+transition-all duration-300 ease-in-out
+flex items-center gap-2 whitespace-nowrap
 shadow-sm hover:shadow-lg
-flex items-center gap-2
-"
->
-  📅 Schedule Consultation
-</Link>
-
+hover:-translate-y-[2px]"
+            >
+              📅 Schedule Consultation
+            </Link>
           </div>
 
-          {/* ✅ Mobile Menu Button */}
+          {/* ✅ Mobile Button */}
           <button
             className="lg:hidden text-3xl"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -258,37 +225,6 @@ flex items-center gap-2
             ☰
           </button>
         </div>
-
-        {/* ✅ Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white shadow-lg rounded-xl p-6 space-y-4">
-            <Link to="/" className="block text-gray-700">
-              Home
-            </Link>
-            <Link to="/about" className="block text-gray-700">
-              About
-            </Link>
-            <Link to="/solutions" className="block text-gray-700">
-              Solutions
-            </Link>
-            <Link to="/training" className="block text-gray-700">
-              Training
-            </Link>
-            <Link to="/contact" className="block text-gray-700">
-              Contact
-            </Link>
-
-            {/* ✅ Premium Mobile Button */}
-            <Link
-              to="/contact"
-              className="block text-center px-6 py-3 rounded-full font-semibold text-white
-              bg-gradient-to-r from-primary-teal to-green-400
-              shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              🚀 Schedule Consultation
-            </Link>
-          </div>
-        )}
       </nav>
     </header>
   )

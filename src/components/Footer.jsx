@@ -109,16 +109,16 @@ const Footer = () => {
                 <span className="text-primary-teal">📞</span>
                 <div>
                   <a
-                    href="tel:80878250238"
+                    href="tel:8087250238"
                     className="text-gray-300 hover:text-primary-teal transition block"
                   >
-                    80878250238
+                    8087250238
                   </a>
                   <a
-                    href="tel:78878888171"
+                    href="tel:7887888171"
                     className="text-gray-300 hover:text-primary-teal transition block"
                   >
-                    78878888171
+                    7887888171
                   </a>
                 </div>
               </li>
@@ -147,13 +147,14 @@ const Footer = () => {
                 <Link
                   to="/contact"
                   className="
-                  px-6 py-2 rounded-full font-semibold
-                  text-primary-teal border border-primary-teal
-                  hover:bg-primary-teal hover:text-white
-                  transition-all duration-300
-                  shadow-md hover:shadow-xl
-                  flex items-center gap-2
-                  w-fit
+         ml-3 px-5 py-2 rounded-lg font-semibold
+bg-gradient-to-r from-[#0F2A5C] to-[#1E3A8A]
+text-white border-none
+transition-all duration-300 ease-in-out
+flex items-center gap-2 whitespace-nowrap
+shadow-md hover:shadow-xl
+hover:-translate-y-[2px]
+hover:from-[#1E3A8A] hover:to-[#1D4ED8]
                   "
                   
                 >

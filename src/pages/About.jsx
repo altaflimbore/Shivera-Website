@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import approachVisual from '../assets/generated/about-approach-visual.png'
 
 const About = () => {
   const certifications = [
@@ -22,7 +23,7 @@ const About = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-navy to-primary-teal text-white py-16">
+      <section className="bg-[#0A1F44] text-white py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
           <p className="text-xl text-gray-200 max-w-3xl">
@@ -54,54 +55,28 @@ const About = () => {
       {/* Who We Are Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-8 text-center">
               Who We Are
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-              <div>
-                <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                  <strong>SHIVERA INFOTECH LLP</strong> is a trusted IT governance, cybersecurity, and
-                  data privacy consulting firm helping organizations achieve secure and compliant growth.
-                  We partner with leadership teams to align technology strategy, risk, and regulatory
-                  expectations.
-                </p>
-                <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                  We work with startups, mid-market enterprises, and large organizations across healthcare,
-                  BFSI, SaaS, pharmaceuticals, and manufacturing. Our programs are designed to be
-                  business-friendly, balancing control requirements with operational realities and
-                  growth objectives.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Every engagement combines technical expertise, regulatory knowledge, and practical
-                  implementation support so that cybersecurity, DPDP Act compliance, and ISO-aligned
-                  controls become part of everyday operations—not just a one-time project.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-md flex flex-col justify-center">
-                <div className="flex items-center mb-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-teal bg-opacity-10 mr-3">
-                    <span className="text-2xl">🛡️</span>
-                  </div>
-                  <div className="font-semibold text-primary-navy">
-                    Governance • Security • Data Privacy
-                  </div>
-                </div>
-                <ul className="space-y-3 text-gray-700 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-primary-teal mr-2 mt-0.5">✔</span>
-                    <span>Technical architects with hands-on ISMS, cloud, and application security experience</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-teal mr-2 mt-0.5">✔</span>
-                    <span>Regulatory specialists tracking DPDP Act, GDPR, and sector-specific guidelines</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-teal mr-2 mt-0.5">✔</span>
-                    <span>Implementation teams focused on audit-ready documentation and adoption on the ground</span>
-                  </li>
-                </ul>
-              </div>
+            <div className="bg-white rounded-xl p-8 shadow-md">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                <strong>SHIVERA INFOTECH LLP</strong> is a trusted IT governance, cybersecurity, and
+                data privacy consulting firm helping organizations achieve secure and compliant growth.
+                We partner with leadership teams to align technology strategy, risk, and regulatory
+                expectations.
+              </p>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                We work with startups, mid-market enterprises, and large organizations across healthcare,
+                BFSI, SaaS, pharmaceuticals, and manufacturing. Our programs are designed to be
+                business-friendly, balancing control requirements with operational realities and
+                growth objectives.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Every engagement combines technical expertise, regulatory knowledge, and practical
+                implementation support so that cybersecurity, DPDP Act compliance, and ISO-aligned
+                controls become part of everyday operations—not just a one-time project.
+              </p>
             </div>
           </div>
         </div>
@@ -115,41 +90,15 @@ const About = () => {
               <div className="bg-white rounded-xl p-8 shadow-md">
                 <div className="text-4xl mb-4">🎯</div>
                 <h2 className="text-2xl font-bold text-primary-navy mb-4">Vision</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  To be a trusted partner setting benchmarks of integrity and reliability in IT,
-                  cybersecurity, data privacy, and compliance consulting. We envision a future where
-                  organizations operate with confidence, knowing their systems are secure, compliant,
-                  and aligned with global best practices.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Our vision is to become a national leader in privacy and compliance consulting,
-                  enabling Indian and global enterprises to adopt future-ready security frameworks that
-                  address the DPDP Act, ISO standards, and evolving cyber threats.
-                </p>
                 <p className="text-gray-700 leading-relaxed">
-                  We aspire to drive digital trust and responsible innovation by helping organizations
-                  embed governance, risk, and compliance into their technology decisions, audits, and
-                  data-driven business models.
+                  To be a trusted leader in cybersecurity, data privacy, and compliance—helping organizations operate securely, confidently, and audit-ready in a rapidly evolving digital world.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-8 shadow-md">
                 <div className="text-4xl mb-4">🚀</div>
                 <h2 className="text-2xl font-bold text-primary-navy mb-4">Mission</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  To empower enterprises through authentic, tailored IT and compliance programs. We are
-                  committed to delivering implementation-first solutions that go beyond documentation to
-                  create sustainable, audit-ready frameworks. Our mission is to bridge the gap between
-                  regulatory requirements and practical business operations.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  We deliver end-to-end compliance transformation—from assessments and policy design to
-                  tooling, training, and mock audits—covering cybersecurity, data privacy, DPDP Act
-                  readiness, and ISO-aligned controls.
-                </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Through consulting, training, and ongoing governance support, we help clients reduce
-                  regulatory and cyber risks, strengthen audit outcomes, and build resilient,
-                  security-aware cultures across business and IT teams.
+                  To deliver practical, implementation-first compliance solutions that strengthen security, reduce risk, and enable sustainable, regulator-aligned growth.
                 </p>
               </div>
             </div>
@@ -213,66 +162,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Why Organizations Choose Us Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-8 text-center">
-              Why Organizations Choose Us
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: 'Experienced Consultants',
-                  description:
-                    'Seasoned cybersecurity, data privacy, and ISO consultants with multi-industry exposure.',
-                },
-                {
-                  title: 'Industry-Specific Approach',
-                  description:
-                    'Solutions tailored for pharma, healthcare, BFSI, SaaS, and manufacturing environments.',
-                },
-                {
-                  title: 'Practical & Audit-Ready',
-                  description:
-                    'Documentation, controls, and evidence prepared with regulator and auditor expectations in mind.',
-                },
-                {
-                  title: 'Enablement & Training',
-                  description:
-                    'Workshops, simulations, and awareness programs that make teams confident in day-to-day compliance.',
-                },
-                {
-                  title: 'Business-Friendly Security',
-                  description:
-                    'Controls designed to protect data without slowing down digital transformation and innovation.',
-                },
-                {
-                  title: 'Long-Term Partnership',
-                  description:
-                    'Ongoing governance, health checks, and refresh programs to keep compliance sustainable.',
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl p-6 shadow-md flex items-start"
-                >
-                  <div className="text-primary-teal mr-3 mt-1">•</div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-primary-navy mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Leadership Section */}
       <section id="leadership" className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
@@ -316,6 +205,12 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-8 text-center">
               Our Approach
             </h2>
+            <img
+              src={approachVisual}
+              alt=""
+              aria-hidden="true"
+              className="w-full max-w-5xl mx-auto mb-10 rounded-2xl shadow-lg hidden md:block"
+            />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
@@ -386,45 +281,18 @@ const About = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-gradient-to-br from-primary-teal to-primary-navy text-white rounded-xl p-6 shadow-lg">
+                <div key={index} className="text-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" style={{background: 'linear-gradient(135deg, #112B5C, #1E4E8C)'}}>
                   <div className="text-4xl mb-3">{cert.icon}</div>
                   <div className="text-xl font-semibold">{cert.name}</div>
                 </div>
               ))}
-            </div>
-            <div className="mt-10">
-              <h3 className="text-2xl font-bold text-primary-navy mb-4 text-center">
-                Certifications & Standards We Support
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700 text-sm">
-                <div className="bg-gray-50 rounded-lg p-4 flex items-start">
-                  <span className="text-primary-teal mr-2 mt-0.5">✔</span>
-                  <span>ISO/IEC 27001 Information Security Management Systems (ISMS)</span>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4 flex items-start">
-                  <span className="text-primary-teal mr-2 mt-0.5">✔</span>
-                  <span>DPDP Act and Indian data privacy rules for digital personal data</span>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4 flex items-start">
-                  <span className="text-primary-teal mr-2 mt-0.5">✔</span>
-                  <span>GDPR best practices for global data protection and cross-border processing</span>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4 flex items-start">
-                  <span className="text-primary-teal mr-2 mt-0.5">✔</span>
-                  <span>SOC 2 readiness for service organizations handling customer data</span>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4 flex items-start">
-                  <span className="text-primary-teal mr-2 mt-0.5">✔</span>
-                  <span>IT governance frameworks and internal control models for boards and CXOs</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-primary-navy to-primary-teal text-white">
+      <section className="py-16 text-white" style={{background: 'linear-gradient(135deg, #0A1F44, #1E4E8C)'}}>
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to work with us?
@@ -435,13 +303,13 @@ const About = () => {
           <Link
             to="/contact"
             className="
-px-8 py-4 rounded-full font-semibold text-lg
-bg-primary-teal text-white
-hover:bg-teal-600
-transition-all duration-300
-shadow-lg hover:shadow-2xl
-"
-
+            px-8 py-4 rounded-full font-semibold text-lg
+            bg-white text-[#0A1F44]
+            hover:bg-[#E6ECF7]
+            transition-all duration-300
+            shadow-lg hover:shadow-2xl
+            transform hover:-translate-y-0.5
+            "
           >
             📅 Schedule a Consultation
           </Link>
