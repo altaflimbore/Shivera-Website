@@ -131,7 +131,7 @@ const Solutions = () => {
             Our experts can tailor solutions to meet your specific compliance and security requirements.
           </p>
           <Link
-            to="/contact"
+            to="/meeting"
             className="
             px-8 py-4 rounded-full font-semibold text-lg text-white
             bg-[#1E4E8C]

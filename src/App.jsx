@@ -13,6 +13,7 @@ import Testimonials from './pages/Testimonials'
 import Careers from './pages/Careers'
 import Contact from './pages/Contact'
 import Collaboration from './pages/Collaboration'
+import Meeting from './pages/Meeting'
 
 function ScrollToHash() {
   const location = useLocation()
@@ -69,6 +70,7 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/collaboration" element={<Collaboration />} />
+            <Route path="/meeting" element={<Meeting />} />
           </Routes>
         </main>
         <Footer />

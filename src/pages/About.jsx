@@ -301,7 +301,7 @@ const About = () => {
             Let's discuss how we can help strengthen your IT and compliance foundation.
           </p>
           <Link
-            to="/contact"
+            to="/meeting"
             className="
             px-8 py-4 rounded-full font-semibold text-lg
             bg-white text-[#0A1F44]

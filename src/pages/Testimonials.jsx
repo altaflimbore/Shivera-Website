@@ -155,7 +155,7 @@ const Testimonials = () => {
             Schedule a consultation to discuss how we can help your organization achieve compliance and security excellence.
           </p>
           <Link
-            to="/contact"
+            to="/meeting"
             className="inline-block px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:-translate-y-0.5"
             style={{background: 'linear-gradient(135deg, #1E4E8C, #274C8E)', color: 'white', boxShadow: '0 10px 25px rgba(10, 31, 68, 0.2)'}}
             onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #274C8E, #325FAE)'}

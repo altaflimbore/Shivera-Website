@@ -229,7 +229,7 @@ const SolutionDetail = () => {
             Schedule a consultation to discuss how we can help with your specific requirements.
           </p>
           <Link
-            to="/contact"
+            to="/meeting"
             className="
 mt-6 px-6 py-3 rounded-lg font-semibold
 bg-gradient-to-r from-[#0F2A5C] to-[#1E3A8A]

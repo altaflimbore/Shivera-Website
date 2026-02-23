@@ -138,14 +138,14 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <span className="text-primary-teal">📍</span>
                 <span className="text-gray-300">
-                  B103, Vastunirvana, Baner-Pashan Link Road, Pune
+                  B103, Vastu Nirvana, Baner-Pashan Link Road, Pune 411021
                 </span>
               </li>
 
               {/* ✅ Updated CTA Button (Dark Green Outline Style) */}
               <li className="pt-4">
                 <Link
-                  to="/contact"
+                  to="/meeting"
                   className="
          ml-3 px-5 py-2 rounded-lg font-semibold
 bg-gradient-to-r from-[#0F2A5C] to-[#1E3A8A]

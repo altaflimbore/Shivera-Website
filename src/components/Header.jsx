@@ -77,153 +77,140 @@ const Header = () => {
     >
       {/* ✅ Top Info Bar */}
       <div className="bg-primary-navy text-white text-xs sm:text-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <div className="container mx-auto px-4 lg:px-8 py-2">
           <div className="hidden md:flex items-center justify-between">
             <span>📧 info@shiverainfotech.com</span>
             <span>📞 8087250238 | 7887888171</span>
-            <span>📍 Baner-Pashan Link Road, Pune</span>
+            <span>📍 Baner-Pashan Link Road, Pune 411021</span>
           </div>
 
           <div className="md:hidden flex flex-col items-center gap-1 text-center">
             <span>📧 info@shiverainfotech.com</span>
             <span>📞 8087250238 | 7887888171</span>
-            <span>📍 Baner-Pashan Link Road, Pune</span>
+            <span>📍 Baner-Pashan Link Road, Pune 411021</span>
           </div>
         </div>
       </div>
 
       {/* ✅ Navbar */}
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex items-center justify-between h-16">
+      <nav className="container mx-auto px-4 lg:px-8">
+        <div className="h-16 flex items-center justify-between max-w-7xl mx-auto px-4">
 
-          {/* ✅ Logo Section */}
-          <Link to="/" className="flex items-center gap-3 flex-shrink-0">
+          <Link to="/" className="flex items-center gap-3">
             <img
-              src={logoIcon}
-              alt="Shivera Logo"
-              className="h-12 w-auto"
+              src="/src/assets/logo-icon.png"
+              alt="Shivera Infotech Logo"
+              className="h-10 w-auto"
             />
-            <img
-              src={logoText}
-              alt="Shivera Infotech"
-              className="h-7 w-auto hidden sm:block"
-            />
+            <span className="text-lg font-semibold tracking-wide">SHIVERA INFOTECH</span>
           </Link>
 
-          {/* ✅ Desktop Navigation */}
-          <nav
-            ref={dropdownRef}
-            className="hidden lg:flex items-center gap-6 text-sm font-medium whitespace-nowrap"
-          >
-            {/* Links */}
-            <Link
-              to="/"
-              className={`whitespace-nowrap ${
-                isActive("/") ? "text-[#1E4E8C] font-semibold" : "text-gray-700"
-              } hover:text-[#1E4E8C] transition-colors duration-300`}
-            >
-              Home
-            </Link>
-
-            <Link
-              to="/about"
-              className={`whitespace-nowrap ${
-                isActive("/about")
-                  ? "text-[#1E4E8C] font-semibold"
-                  : "text-gray-700"
-              } hover:text-[#1E4E8C] transition-colors duration-300`}
-            >
-              About Us
-            </Link>
-
-            {/* Solutions Dropdown */}
+          <div className="flex-1 flex items-center justify-end">
+            {/* Desktop Menu */}
             <div
-              className="relative whitespace-nowrap"
-              onMouseEnter={() => openDropdown("solutions")}
-              onMouseLeave={closeDropdown}
+              ref={dropdownRef}
+              className="hidden lg:flex items-center gap-6 text-sm font-medium whitespace-nowrap"
             >
-              <button className="hover:text-[#1E4E8C] text-gray-700 transition-colors duration-300">
-                Solutions ▾
-              </button>
+              {/* Links */}
+              <Link
+                to="/"
+                className={`whitespace-nowrap font-medium ${
+                  isActive("/") ? "text-blue-600 font-semibold" : "text-gray-700"
+                } hover:text-blue-600 transition-colors duration-300`}
+              >
+                Home
+              </Link>
 
-              {activeDropdown === "solutions" && (
-                <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2">
-                  {solutionsItems.map((item) => (
-                    <Link
-                      key={item.slug}
-                      to={`/solutions/${item.slug}`}
-                      className="block px-4 py-2 text-sm hover:bg-[#1E4E8C] hover:text-white transition-colors duration-300"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <Link
+                to="/about"
+                className={`whitespace-nowrap font-medium ${
+                  isActive("/about")
+                    ? "text-blue-600 font-semibold"
+                    : "text-gray-700"
+                } hover:text-blue-600 transition-colors duration-300`}
+              >
+                About Us
+              </Link>
+
+              {/* Solutions Dropdown */}
+              <div
+                className="relative whitespace-nowrap"
+                onMouseEnter={() => openDropdown("solutions")}
+                onMouseLeave={closeDropdown}
+              >
+                <button className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Solutions ▾</button>
+
+                {activeDropdown === "solutions" && (
+                  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2">
+                    {solutionsItems.map((item) => (
+                      <Link
+                        key={item.slug}
+                        to={`/solutions/${item.slug}`}
+                        className={`block px-4 py-2 text-sm ${
+                          isActive(`/solutions/${item.slug}`)
+                            ? "text-blue-600 bg-blue-100 font-medium"
+                            : "text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Training Dropdown */}
+              <div
+                className="relative whitespace-nowrap"
+                onMouseEnter={() => openDropdown("training")}
+                onMouseLeave={closeDropdown}
+              >
+                <button className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Training ▾</button>
+
+                {activeDropdown === "training" && (
+                  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2">
+                    {trainingItems.map((item, index) => (
+                      <Link
+                        key={index}
+                        to={`/training#${item.slug}`}
+                        className={`block px-4 py-2 text-sm ${
+                          location.pathname === "/training" && location.hash === `#${item.slug}`
+                            ? "text-blue-600 bg-blue-100 font-medium"
+                            : "text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link to="/testimonials" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium whitespace-nowrap">Testimonials</Link>
+
+              <Link to="/careers" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium whitespace-nowrap">Careers</Link>
+
+              <Link to="/collaboration" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium whitespace-nowrap">Why Us</Link>
+
+              <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium whitespace-nowrap">Contact</Link>
+
+              {/* ✅ CTA Button */}
+              <Link
+                to="/meeting"
+                className="ml-3 px-5 py-2 rounded-lg font-semibold border border-[#0A1F44] text-[#0A1F44] hover:bg-[#0A1F44] hover:text-white transition-all duration-300 ease-in-out flex items-center gap-2 whitespace-nowrap shadow-sm hover:shadow-lg hover:-translate-y-[2px]"
+              >
+                📅 Schedule Consultation
+              </Link>
             </div>
 
-            {/* Training Dropdown */}
-            <div
-              className="relative whitespace-nowrap"
-              onMouseEnter={() => openDropdown("training")}
-              onMouseLeave={closeDropdown}
+            {/* ✅ Mobile Button */}
+            <button
+              className="lg:hidden text-3xl"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <button className="hover:text-[#1E4E8C] text-gray-700 transition-colors duration-300">
-                Training ▾
-              </button>
-
-              {activeDropdown === "training" && (
-                <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2">
-                  {trainingItems.map((item, index) => (
-                    <Link
-                      key={index}
-                      to={`/training#${item.slug}`}
-                      className="block px-4 py-2 text-sm hover:bg-[#1E4E8C] hover:text-white transition-colors duration-300"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <Link to="/testimonials" className="hover:text-[#1E4E8C] text-gray-700 whitespace-nowrap transition-colors duration-300">
-              Testimonials
-            </Link>
-
-            <Link to="/careers" className="hover:text-[#1E4E8C] text-gray-700 whitespace-nowrap transition-colors duration-300">
-              Careers
-            </Link>
-
-            <Link to="/collaboration" className="hover:text-[#1E4E8C] text-gray-700 whitespace-nowrap transition-colors duration-300">
-              Why Us
-            </Link>
-
-            <Link to="/contact" className="hover:text-[#1E4E8C] text-gray-700 whitespace-nowrap transition-colors duration-300">
-              Contact
-            </Link>
-
-            {/* ✅ CTA Button */}
-            <Link
-              to="/contact"
-              className="ml-3 px-5 py-2 rounded-lg font-semibold
-border border-[#0A1F44] text-[#0A1F44]
-hover:bg-[#0A1F44] hover:text-white
-transition-all duration-300 ease-in-out
-flex items-center gap-2 whitespace-nowrap
-shadow-sm hover:shadow-lg
-hover:-translate-y-[2px]"
-            >
-              📅 Schedule Consultation
-            </Link>
-          </nav>
-
-          {/* ✅ Mobile Menu Button */}
-          <button
-            className="lg:hidden text-3xl text-gray-700"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            ☰
-          </button>
+              ☰
+            </button>
+          </div>
         </div>
       </nav>
     </header>

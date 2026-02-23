@@ -288,7 +288,7 @@ const Collaboration = () => {
           </p>
 
           <Link
-            to="/contact"
+            to="/meeting"
             className="
             px-8 py-4 rounded-full font-semibold text-lg
             bg-white text-[#0A1F44]

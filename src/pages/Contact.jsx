@@ -149,7 +149,7 @@ const Contact = () => {
                       Address
                     </h3>
                     <p className="text-gray-700">
-                      B103, Vastunirvana, Baner-Pashan Link Road, Pune
+                      B103, Vastu Nirvana, Baner-Pashan Link Road, Pune 411021
                     </p>
                   </div>
                 </div>

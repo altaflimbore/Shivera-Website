@@ -90,7 +90,7 @@ const Home = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative bg-[#0A1F44] text-white py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#0A1F44] text-white pt-20 pb-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-64 h-64 bg-[#1E4E8C] rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#112B5C] rounded-full blur-3xl"></div>
@@ -123,21 +123,21 @@ const Home = () => {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center max-w-4xl mx-auto mb-6">
               Empowering Organizations with Trusted IT, Data Privacy, and
               Compliance Solutions
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
+            <p className="mt-6 text-base md:text-lg text-center max-w-3xl mx-auto text-gray-200">
               We help enterprises achieve secure, compliant, and sustainable
               growth through expert-led cybersecurity, data privacy, and
               regulatory compliance services.
             </p>
 
             {/* ✅ Updated Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 mb-12">
               <Link
-                to="/contact"
+                to="/meeting"
                 className="
                 px-8 py-4 rounded-full font-semibold text-lg text-white
                 bg-gradient-to-r from-[#1E4E8C] to-[#0A1F44]
@@ -220,7 +220,7 @@ const Home = () => {
 
           {/* ✅ Updated CTA Button */}
           <Link
-            to="/contact"
+            to="/meeting"
             className="
             px-8 py-4 rounded-full font-semibold text-lg text-white
             bg-gradient-to-r from-[#1E4E8C] to-[#0A1F44]
