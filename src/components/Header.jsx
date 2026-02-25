@@ -69,40 +69,48 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white shadow-lg"
-          : "bg-white bg-opacity-95 backdrop-blur-sm"
+          ? "bg-white shadow-card backdrop-blur-md"
+          : "bg-white/98 backdrop-blur-md"
       }`}
     >
-      {/* ✅ Top Info Bar */}
-      <div className="bg-primary-navy text-white text-xs sm:text-sm">
-        <div className="container mx-auto px-4 lg:px-8 py-2">
+      {/* ✅ Premium Top Info Bar */}
+      <div className="bg-primary-navy text-white text-xs sm:text-sm font-medium">
+        <div className="content-container py-2.5">
           <div className="hidden md:flex items-center justify-between">
-            <span>📧 info@shiverainfotech.com</span>
-            <span>📞 8087250238 | 7887888171</span>
-            <span>📍 Baner-Pashan Link Road, Pune 411021</span>
+            <span className="flex items-center gap-2">✉️ info@shiverainfotech.com</span>
+            <span className="flex items-center gap-2">📞 8087250238 | 7887888171</span>
+            <span className="flex items-center gap-2">📍 Baner-Pashan Link Road, Pune 411021</span>
           </div>
 
-          <div className="md:hidden flex flex-col items-center gap-1 text-center">
-            <span>📧 info@shiverainfotech.com</span>
+          <div className="md:hidden flex flex-col items-center gap-2 text-center text-white">
+            <span>✉️ info@shiverainfotech.com</span>
             <span>📞 8087250238 | 7887888171</span>
             <span>📍 Baner-Pashan Link Road, Pune 411021</span>
           </div>
         </div>
       </div>
 
-      {/* ✅ Navbar */}
-      <nav className="container mx-auto px-4 lg:px-8">
-        <div className="h-16 flex items-center justify-between max-w-7xl mx-auto px-4">
+      {/* ✅ Premium Navbar */}
+      <nav className="content-container">
+        <div className={`flex items-center justify-between transition-all duration-500 ${
+          isScrolled ? "h-14" : "h-16"
+        }`}>
 
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3 hover:opacity-85 transition-opacity duration-300">
             <img
               src="/src/assets/logo-icon.png"
               alt="Shivera Infotech Logo"
-              className="h-10 w-auto"
+              className={`transition-all duration-500 ${
+                isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+              }`}
             />
-            <span className="text-lg font-semibold tracking-wide">SHIVERA INFOTECH</span>
+            <span className={`font-bold tracking-wider text-slate-900 transition-all duration-500 ${
+              isScrolled ? "text-sm" : "text-base"
+            }`}>
+              SHIVERA INFOTECH
+            </span>
           </Link>
 
           <div className="flex-1 flex items-center justify-end">
@@ -114,20 +122,20 @@ const Header = () => {
               {/* Links */}
               <Link
                 to="/"
-                className={`whitespace-nowrap font-medium ${
-                  isActive("/") ? "text-blue-600 font-semibold" : "text-gray-700"
-                } hover:text-blue-600 transition-colors duration-300`}
+                className={`transition-all duration-300 ${
+                  isActive("/") ? "text-primary-navy font-bold" : "text-slate-700 hover:text-accent-cyan"
+                }`}
               >
                 Home
               </Link>
 
               <Link
                 to="/about"
-                className={`whitespace-nowrap font-medium ${
+                className={`transition-all duration-300 ${
                   isActive("/about")
-                    ? "text-blue-600 font-semibold"
-                    : "text-gray-700"
-                } hover:text-blue-600 transition-colors duration-300`}
+                    ? "text-primary-navy font-bold"
+                    : "text-slate-700 hover:text-accent-cyan"
+                }`}
               >
                 About Us
               </Link>
@@ -138,18 +146,20 @@ const Header = () => {
                 onMouseEnter={() => openDropdown("solutions")}
                 onMouseLeave={closeDropdown}
               >
-                <button className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Solutions ▾</button>
+                <button className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium flex items-center gap-1">
+                  Solutions <span className="text-xs">▾</span>
+                </button>
 
                 {activeDropdown === "solutions" && (
-                  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2">
+                  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-card border border-slate-200 py-2 animate-fade-in">
                     {solutionsItems.map((item) => (
                       <Link
                         key={item.slug}
                         to={`/solutions/${item.slug}`}
-                        className={`block px-4 py-2 text-sm ${
+                        className={`block px-4 py-2 text-sm transition-all duration-200 ${
                           isActive(`/solutions/${item.slug}`)
-                            ? "text-blue-600 bg-blue-100 font-medium"
-                            : "text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                            ? "text-accent-cyan bg-accent-cyan/10 font-medium"
+                            : "text-slate-700 hover:bg-slate-50 hover:text-accent-cyan"
                         }`}
                       >
                         {item.name}
@@ -165,18 +175,20 @@ const Header = () => {
                 onMouseEnter={() => openDropdown("training")}
                 onMouseLeave={closeDropdown}
               >
-                <button className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Training ▾</button>
+                <button className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium flex items-center gap-1">
+                  Training <span className="text-xs">▾</span>
+                </button>
 
                 {activeDropdown === "training" && (
-                  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl border py-2">
+                  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-card border border-slate-200 py-2 animate-fade-in">
                     {trainingItems.map((item, index) => (
                       <Link
                         key={index}
                         to={`/training#${item.slug}`}
-                        className={`block px-4 py-2 text-sm ${
+                        className={`block px-4 py-2 text-sm transition-all duration-200 ${
                           location.pathname === "/training" && location.hash === `#${item.slug}`
-                            ? "text-blue-600 bg-blue-100 font-medium"
-                            : "text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                            ? "text-accent-cyan bg-accent-cyan/10 font-medium"
+                            : "text-slate-700 hover:bg-slate-50 hover:text-accent-cyan"
                         }`}
                       >
                         {item.name}
@@ -186,18 +198,18 @@ const Header = () => {
                 )}
               </div>
 
-              <Link to="/testimonials" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium whitespace-nowrap">Testimonials</Link>
+              <Link to="/testimonials" className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium whitespace-nowrap">Testimonials</Link>
 
-              <Link to="/careers" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium whitespace-nowrap">Careers</Link>
+              <Link to="/careers" className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium whitespace-nowrap">Careers</Link>
 
-              <Link to="/collaboration" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium whitespace-nowrap">Why Us</Link>
+              <Link to="/collaboration" className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium whitespace-nowrap">Why Us</Link>
 
-              <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium whitespace-nowrap">Contact</Link>
+              <Link to="/contact" className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium whitespace-nowrap">Contact</Link>
 
-              {/* ✅ CTA Button */}
+              {/* ✅ Premium CTA Button */}
               <Link
                 to="/meeting"
-                className="ml-3 px-5 py-2 rounded-lg font-semibold border border-[#0A1F44] text-[#0A1F44] hover:bg-[#0A1F44] hover:text-white transition-all duration-300 ease-in-out flex items-center gap-2 whitespace-nowrap shadow-sm hover:shadow-lg hover:-translate-y-[2px]"
+                className="btn-accent ml-4 whitespace-nowrap"
               >
                 📅 Schedule Consultation
               </Link>
@@ -205,7 +217,7 @@ const Header = () => {
 
             {/* ✅ Mobile Button */}
             <button
-              className="lg:hidden text-3xl"
+              className="lg:hidden text-3xl text-primary-navy hover:text-accent-cyan transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               ☰

@@ -5,21 +5,42 @@ import logoText from "../assets/logo-text.png"
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-navy text-white mt-20">
-      <div className="container mx-auto px-4 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-br from-primary-navy via-slate-900 to-primary-navy-dark text-white mt-16">
+      {/* Premium Trust Signals Bar */}
+      <div className="border-b border-slate-700/30 bg-primary-navy-dark/50">
+        <div className="content-container py-5">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm font-medium opacity-95">
+            <div className="flex items-center gap-2 bg-accent-cyan/10 px-4 py-2 rounded-full border border-accent-cyan/30">
+              <span className="text-lg">🛡️</span>
+              <span className="text-white">ISO 27001 Certified</span>
+            </div>
+            <div className="flex items-center gap-2 bg-accent-cyan/10 px-4 py-2 rounded-full border border-accent-cyan/30">
+              <span className="text-lg">🔒</span>
+              <span className="text-white">DPDP Act Compliant</span>
+            </div>
+            <div className="flex items-center gap-2 bg-accent-cyan/10 px-4 py-2 rounded-full border border-accent-cyan/30">
+              <span className="text-lg">📋</span>
+              <span className="text-white">GDPR Aligned</span>
+            </div>
+            <div className="flex items-center gap-2 bg-accent-indigo/10 px-4 py-2 rounded-full border border-accent-indigo/30">
+              <span className="text-lg">🏆</span>
+              <span className="text-white">20+ Years Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="content-container py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* ✅ Company Info */}
-          <div>
-            <div className="flex items-center mb-4 space-x-3">
-              {/* Shield Logo */}
+          <div className="animate-fade-in">
+            <div className="flex items-center mb-5 space-x-3">
               <img
                 src={logoIcon}
                 alt="Shivera Shield Logo"
                 className="w-12 h-12 object-contain"
               />
-
-              {/* Text Logo */}
               <img
                 src={logoText}
                 alt="Shivera Infotech Logo"
@@ -27,16 +48,22 @@ const Footer = () => {
               />
             </div>
 
-            <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-              Trusted IT, Data Privacy & Compliance Consulting Partner helping
-              enterprises achieve audit-ready and regulator-aligned growth.
+            <p className="text-slate-300 text-sm mb-6 leading-relaxed">
+              Premium IT, Data Privacy & Compliance Consulting Partner helping enterprises achieve audit-ready and regulator-aligned growth with confidence.
             </p>
+
+            {/* Premium Compliance Badges */}
+            <div className="flex gap-3 mt-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-cyan/20 border border-accent-cyan/40 text-lg hover:scale-110 transition">✓</div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-indigo/20 border border-accent-indigo/40 text-lg hover:scale-110 transition">🛡️</div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-cyan/20 border border-accent-cyan/40 text-lg hover:scale-110 transition">📋</div>
+            </div>
           </div>
 
           {/* ✅ Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+          <div className="animate-fade-in">
+            <h3 className="font-bold mb-6 text-accent-cyan text-lg">Quick Links</h3>
+            <ul className="space-y-3 text-sm">
               {[
                 { name: "Home", path: "/" },
                 { name: "About Us", path: "/about" },
@@ -48,9 +75,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     to={item.path}
-                    className="text-gray-300 hover:text-primary-teal transition-colors"
+                    className="text-slate-300 hover:text-accent-cyan transition-colors duration-300 font-medium"
                   >
-                    {item.name}
+                    → {item.name}
                   </Link>
                 </li>
               ))}
@@ -58,9 +85,9 @@ const Footer = () => {
           </div>
 
           {/* ✅ Services */}
-          <div>
-            <h3 className="font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm">
+          <div className="animate-fade-in">
+            <h3 className="font-bold mb-6 text-accent-cyan text-lg">Services</h3>
+            <ul className="space-y-3 text-sm">
               {[
                 {
                   name: "Cybersecurity & ISMS",
@@ -90,9 +117,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     to={service.path}
-                    className="text-gray-300 hover:text-primary-teal transition-colors"
+                    className="text-slate-300 hover:text-accent-cyan transition-colors duration-300 font-medium"
                   >
-                    {service.name}
+                    → {service.name}
                   </Link>
                 </li>
               ))}
@@ -100,23 +127,23 @@ const Footer = () => {
           </div>
 
           {/* ✅ Contact */}
-          <div>
-            <h3 className="font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-3 text-sm">
+          <div className="animate-fade-in">
+            <h3 className="font-bold mb-6 text-accent-indigo text-lg">Contact Us</h3>
+            <ul className="space-y-4 text-sm">
 
               {/* Phone */}
-              <li className="flex items-start gap-2">
-                <span className="text-primary-teal">📞</span>
-                <div>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-cyan text-lg flex-shrink-0">📞</span>
+                <div className="pt-0.5">
                   <a
                     href="tel:8087250238"
-                    className="text-gray-300 hover:text-primary-teal transition block"
+                    className="text-slate-300 hover:text-accent-cyan transition block font-medium"
                   >
                     8087250238
                   </a>
                   <a
                     href="tel:7887888171"
-                    className="text-gray-300 hover:text-primary-teal transition block"
+                    className="text-slate-300 hover:text-accent-cyan transition block font-medium"
                   >
                     7887888171
                   </a>
@@ -124,39 +151,29 @@ const Footer = () => {
               </li>
 
               {/* Email */}
-              <li className="flex items-start gap-2">
-                <span className="text-primary-teal">✉️</span>
+              <li className="flex items-center gap-3">
+                <span className="text-accent-cyan text-lg">✉️</span>
                 <a
                   href="mailto:info@shiverainfotech.com"
-                  className="text-gray-300 hover:text-primary-teal transition"
+                  className="text-slate-300 hover:text-accent-cyan transition font-medium"
                 >
                   info@shiverainfotech.com
                 </a>
               </li>
 
               {/* Address */}
-              <li className="flex items-start gap-2">
-                <span className="text-primary-teal">📍</span>
-                <span className="text-gray-300">
+              <li className="flex items-start gap-3">
+                <span className="text-accent-cyan text-lg flex-shrink-0">📍</span>
+                <span className="text-slate-300 pt-0.5">
                   B103, Vastu Nirvana, Baner-Pashan Link Road, Pune 411021
                 </span>
               </li>
 
-              {/* ✅ Updated CTA Button (Dark Green Outline Style) */}
+              {/* ✅ Premium CTA Button */}
               <li className="pt-4">
                 <Link
                   to="/meeting"
-                  className="
-         ml-3 px-5 py-2 rounded-lg font-semibold
-bg-gradient-to-r from-[#0F2A5C] to-[#1E3A8A]
-text-white border-none
-transition-all duration-300 ease-in-out
-flex items-center gap-2 whitespace-nowrap
-shadow-md hover:shadow-xl
-hover:-translate-y-[2px]
-hover:from-[#1E3A8A] hover:to-[#1D4ED8]
-                  "
-                  
+                  className="btn-accent inline-block text-sm"
                 >
                   📅 Schedule Consultation
                 </Link>
@@ -165,12 +182,20 @@ hover:from-[#1E3A8A] hover:to-[#1D4ED8]
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
-          <p>
-            &copy; {new Date().getFullYear()} SHIVERA INFOTECH LLP. All rights
-            reserved.
-          </p>
+        {/* Premium Bottom Bar */}
+        <div className="border-t border-slate-700/50 mt-12 pt-8 text-center text-sm text-slate-400">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="font-medium">
+              &copy; {new Date().getFullYear()} SHIVERA INFOTECH LLP. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4 text-xs">
+              <a href="#" className="hover:text-accent-cyan transition">Privacy Policy</a>
+              <span>•</span>
+              <a href="#" className="hover:text-accent-cyan transition">Terms of Service</a>
+              <span>•</span>
+              <a href="#" className="hover:text-accent-cyan transition">Compliance Statement</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

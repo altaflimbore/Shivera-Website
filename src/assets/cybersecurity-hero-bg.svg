@@ -1,0 +1,109 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Premium gradient mesh -->
+    <linearGradient id="gradMesh1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B1C2D;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1A3A52;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#0E2E4A;stop-opacity:1" />
+    </linearGradient>
+
+    <radialGradient id="glowNode" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:0.6" />
+      <stop offset="70%" style="stop-color:#0EA5E9;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0" />
+    </radialGradient>
+
+    <radialGradient id="glowNodeWeak" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Soft blur filters -->
+    <filter id="softGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+    </filter>
+
+    <filter id="mediumGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
+    </filter>
+
+    <!-- Animated glow -->
+    <style>
+      @keyframes pulse-glow {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.8; }
+      }
+      .glow-node-1 { animation: pulse-glow 4s ease-in-out infinite; }
+      .glow-node-2 { animation: pulse-glow 5s ease-in-out infinite 0.5s; }
+      .glow-node-3 { animation: pulse-glow 6s ease-in-out infinite 1s; }
+      .circuit-line { opacity: 0.15; stroke: #0EA5E9; stroke-width: 1.5; }
+      .circuit-pulse { animation: circuit-animate 8s ease-in-out infinite; }
+      @keyframes circuit-animate {
+        0%, 100% { stroke-dashoffset: 1000; opacity: 0.05; }
+        50% { stroke-dashoffset: 0; opacity: 0.2; }
+      }
+    </style>
+  </defs>
+
+  <!-- Base gradient background -->
+  <rect width="1920" height="1080" fill="url(#gradMesh1)" />
+
+  <!-- Subtle gradient mesh overlay -->
+  <circle cx="200" cy="150" r="400" fill="#4F46E5" opacity="0.08" filter="url(#mediumGlow)" />
+  <circle cx="1800" cy="900" r="500" fill="#0EA5E9" opacity="0.06" filter="url(#mediumGlow)" />
+  <circle cx="1200" cy="200" r="350" fill="#4F46E5" opacity="0.05" filter="url(#mediumGlow)" />
+  <circle cx="400" cy="700" r="400" fill="#0EA5E9" opacity="0.04" filter="url(#mediumGlow)" />
+
+  <!-- Circuit lines - abstract network -->
+  <line x1="300" y1="200" x2="800" y2="500" class="circuit-line circuit-pulse" stroke-dasharray="1000" />
+  <line x1="800" y1="500" x2="1400" y2="300" class="circuit-line circuit-pulse" stroke-dasharray="1000" style="animation-delay: 2s;" />
+  <line x1="1400" y1="300" x2="1600" y2="850" class="circuit-line circuit-pulse" stroke-dasharray="1000" style="animation-delay: 4s;" />
+  <line x1="400" y1="700" x2="1200" y2="600" class="circuit-line circuit-pulse" stroke-dasharray="1000" style="animation-delay: 1s;" />
+  <line x1="1200" y1="600" x2="500" y2="900" class="circuit-line circuit-pulse" stroke-dasharray="1000" style="animation-delay: 3s;" />
+
+  <!-- Network nodes with glow effect -->
+  <!-- Node 1: Top Left -->
+  <circle cx="300" cy="200" r="60" fill="url(#glowNode)" class="glow-node-1" />
+  <circle cx="300" cy="200" r="50" stroke="#4F46E5" stroke-width="2" fill="none" opacity="0.4" />
+  <circle cx="300" cy="200" r="35" fill="none" stroke="#0EA5E9" stroke-width="1.5" opacity="0.3" />
+
+  <!-- Node 2: Right side -->
+  <circle cx="1600" cy="280" r="50" fill="url(#glowNodeWeak)" class="glow-node-2" />
+  <circle cx="1600" cy="280" r="40" stroke="#0EA5E9" stroke-width="1.5" fill="none" opacity="0.3" />
+
+  <!-- Node 3: Bottom center -->
+  <circle cx="1200" cy="900" r="55" fill="url(#glowNode)" class="glow-node-3" />
+  <circle cx="1200" cy="900" r="45" stroke="#4F46E5" stroke-width="2" fill="none" opacity="0.3" />
+
+  <!-- Node 4: Left bottom -->
+  <circle cx="400" cy="750" r="45" fill="url(#glowNodeWeak)" class="glow-node-2" />
+  <circle cx="400" cy="750" r="35" stroke="#0EA5E9" stroke-width="1.5" fill="none" opacity="0.25" />
+
+  <!-- Central node (large, subtle) -->
+  <circle cx="960" cy="540" r="80" fill="url(#glowNode)" opacity="0.15" class="glow-node-1" />
+  <circle cx="960" cy="540" r="70" stroke="#4F46E5" stroke-width="2" fill="none" opacity="0.15" />
+
+  <!-- Futuristic Shield Outline - Large, centered, subtle -->
+  <g opacity="0.12">
+    <!-- Shield shape -->
+    <path d="M 960 300 L 1100 380 L 1100 650 Q 960 780 960 780 Q 820 650 820 650 L 820 380 Z" 
+          stroke="#0EA5E9" stroke-width="2" fill="none" />
+    <!-- Horizontal shield line -->
+    <line x1="820" y1="500" x2="1100" y2="500" stroke="#0EA5E9" stroke-width="1" opacity="0.5" />
+    <!-- Vertical shield line -->
+    <line x1="960" y1="380" x2="960" y2="750" stroke="#0EA5E9" stroke-width="1" opacity="0.5" />
+    <!-- Diagonal accent lines -->
+    <line x1="860" y1="420" x2="920" y2="580" stroke="#4F46E5" stroke-width="1" opacity="0.4" />
+    <line x1="1060" y1="420" x2="1000" y2="580" stroke="#4F46E5" stroke-width="1" opacity="0.4" />
+  </g>
+
+  <!-- Subtle data visualization elements (small bars) -->
+  <g opacity="0.08">
+    <rect x="1700" y="850" width="12" height="60" fill="#0EA5E9" rx="2" />
+    <rect x="1725" y="820" width="12" height="90" fill="#4F46E5" rx="2" />
+    <rect x="1750" y="870" width="12" height="40" fill="#0EA5E9" rx="2" />
+  </g>
+
+  <!-- Top accent glow -->
+  <ellipse cx="960" cy="50" rx="600" ry="150" fill="#4F46E5" opacity="0.04" filter="url(#mediumGlow)" />
+</svg>
