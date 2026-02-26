@@ -193,8 +193,8 @@ const SolutionDetail = () => {
       </section>
 
       {/* Overview Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-12 bg-white">
+        <div className="content-container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-primary-navy mb-6">Overview</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-8">{solution.overview}</p>
@@ -203,8 +203,8 @@ const SolutionDetail = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="pt-8 pb-12 bg-white">
+        <div className="content-container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-primary-navy mb-8 text-center">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -221,7 +221,7 @@ const SolutionDetail = () => {
 
       {/* CTA Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
+        <div className="content-container text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-6">
             Ready to Get Started?
           </h2>

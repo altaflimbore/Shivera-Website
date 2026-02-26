@@ -14,10 +14,10 @@ const Careers = () => {
       </section>
 
       {/* Coming Soon Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="text-6xl mb-6">🚀</div>
+            <div className="text-6xl mb-6"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-6">
               Openings Coming Soon
             </h2>

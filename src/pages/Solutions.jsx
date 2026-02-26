@@ -1,121 +1,151 @@
 import { Link } from 'react-router-dom'
-import genCyberIcon from '../assets/generated/icon-cybersecurity-isms.png'
-import genDpdpIcon from '../assets/generated/icon-data-privacy-dpdp.png'
-import genIsoIcon from '../assets/generated/icon-iso-certifications.png'
-import genPoshIcon from '../assets/generated/icon-posh-compliance.png'
 
 const Solutions = () => {
   const solutions = [
     {
-      title: 'Cybersecurity & ISMS',
-      description: 'Comprehensive information security management systems, risk assessments, and incident readiness.',
-      icon: '🛡️',
-      image: genCyberIcon,
-      slug: 'cybersecurity-isms',
-      features: ['ISO 27001 Implementation', 'Risk Assessments', 'Incident Readiness', 'SOC Support'],
-    },
-    {
-      title: 'Data Privacy & Governance',
-      description: 'DPDP compliance consulting, data privacy program execution, and data protection audits.',
-      icon: '🔒',
-      image: genDpdpIcon,
-      slug: 'data-privacy-governance',
-      features: ['DPDP Compliance', 'Data Privacy Program Execution', 'Data Protection Audits', 'DPO-as-a-Service'],
-    },
-    {
-      title: 'Quality & IT Compliance',
-      description: 'Computer system validation, GxP infrastructure qualification, and migration compliance.',
       icon: '💻',
-      slug: 'quality-it-compliance',
-      features: ['CSV Validation', 'GxP Infrastructure Qualification', 'Migration Compliance'],
+      title: 'IT CSV & Pharmaceutical GxP Compliance',
+      subheading: 'Validated systems and GxP-aligned compliance frameworks for regulated industries.',
+      overview: 'Our Pharmaceutical GxP and Computer System Validation (CSV) services ensure that IT systems within regulated environments meet validation requirements and maintain data integrity across the lifecycle.',
+      services: [
+        'Computer System Validation (GAMP 5 aligned)',
+        'IT Infrastructure Qualification (Servers, Networks, Cloud)',
+        'GxP / IT Governance & Compliance Audits',
+        'Migration & System Upgrade Compliance Support',
+        'Documentation Lifecycle & Audit Preparation'
+      ]
     },
     {
-      title: 'ERP & Digital Solutions',
-      description: 'ERPNext implementation, business process optimization, and integration support.',
+      icon: '🔒',
+      title: 'Data Privacy & DPDP / GDPR Compliance Consulting',
+      subheading: 'Strategic data protection advisory aligned with DPDP Act, GDPR, and global privacy regulations.',
+      overview: 'We assist organizations in building comprehensive privacy governance programs that protect personal data while meeting regulatory obligations and strengthening stakeholder trust.',
+      services: [
+        'DPDP / GDPR Awareness Training',
+        'DPDP / GDPR Gap Assessments',
+        'Data Privacy Program Implementation',
+        'Privacy-by-Design Governance Frameworks',
+        'Data Protection Audits',
+        'DPO-as-a-Service (Ongoing compliance monitoring and regulatory liaison)'
+      ]
+    },
+    {
+      icon: '🛡️',
+      title: 'Cybersecurity & ISMS Implementation',
+      subheading: 'Enterprise-grade Information Security Management Systems designed to safeguard critical assets and ensure regulatory alignment.',
+      overview: 'Our Cybersecurity & ISMS services enable organizations to establish structured information security frameworks aligned with ISO 27001 and global best practices. We support organizations from initial risk assessment through full implementation and audit readiness.',
+      services: [
+        'ISO 27001 Implementation (Gap analysis, risk assessment, documentation, control deployment)',
+        'Enterprise Risk Assessments',
+        'Incident Response Framework & Tabletop Exercises',
+        'Security Operations Center (SOC) Setup & Advisory',
+        'ISMS Policy Development & Governance'
+      ]
+    },
+    {
       icon: '📊',
-      slug: 'erp-digital-solutions',
-      features: ['ERPNext Implementation', 'Business Process Optimization', 'Support & Integration'],
+      title: 'ERPNext Implementation & Enterprise Process Optimization',
+      subheading: 'Business process transformation through structured ERPNext deployment and integration.',
+      overview: 'We help organizations implement and optimize ERPNext to enhance operational efficiency, strengthen internal controls, and enable data-driven decision-making.',
+      services: [
+        'End-to-End ERPNext Implementation',
+        'Business Process Mapping & Optimization',
+        'System Customization & Integration',
+        'Ongoing Support & Performance Monitoring'
+      ]
     },
     {
-      title: 'ISO Certifications',
-      description: 'End-to-end ISO certification journeys with audit-ready implementation support.',
       icon: '✅',
-      image: genIsoIcon,
-      slug: 'iso-certifications',
-      features: ['ISO 9001', 'ISO 14001', 'ISO 27001', 'ISO 27701'],
+      title: 'ISO Certifications & Audit Support',
+      subheading: 'Comprehensive ISO certification journeys with structured governance implementation.',
+      overview: 'We guide organizations through ISO certification processes by developing sustainable management systems aligned with international standards.',
+      services: [
+        'ISO 9001 – Quality Management Systems',
+        'ISO 14001 – Environmental Management Systems',
+        'ISO 27001 – Information Security Management Systems',
+        'ISO 27701 – Privacy Information Management Systems'
+      ]
     },
     {
-      title: 'POSH & Legal Compliance',
-      description: 'Prevention of Sexual Harassment awareness sessions, IC training, and policy drafting.',
       icon: '⚖️',
-      image: genPoshIcon,
-      slug: 'posh-legal-compliance',
-      features: ['Awareness Sessions', 'IC Training', 'Policy Drafting', 'Reporting Support'],
+      title: 'POSH Compliance & Legal Governance',
+      subheading: 'Structured workplace compliance programs aligned with statutory obligations.',
+      overview: 'We support organizations in building legally compliant and ethically governed workplaces through structured POSH programs and training.',
+      services: [
+        'Organization-Wide Awareness Sessions',
+        'Internal Committee (IC) Training',
+        'POSH Policy Drafting & Governance Structuring',
+        'Complaint Handling, Investigation & Litigation Support'
+      ]
     },
     {
-      title: 'Environmental & Energy Audits',
-      description: 'Green audits, energy optimization, and regulatory audit support services.',
-      icon: '🌱',
-      slug: 'environmental-energy-audits',
-      features: ['Green Audits', 'Energy Optimization', 'Regulatory Audit Support'],
-    },
+      icon: '📚',
+      title: 'Training & Certifications',
+      subheading: 'Professional development programs designed to strengthen regulatory, privacy, and cybersecurity capabilities.',
+      overview: 'Our training programs are designed for compliance officers, IT leaders, quality teams, and executive stakeholders seeking structured knowledge in Pharmaceutical GxP, CSV, Data Privacy, ISO standards, and Cybersecurity governance. We provide practical, implementation-oriented sessions that translate regulatory requirements into operational understanding.',
+      services: [
+        'Pharmaceutical GxP Training',
+        'CSV & Data Privacy Programs',
+        'ISO Standards Certification Courses',
+        'Cybersecurity Governance Workshops'
+      ]
+    }
   ]
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-[#0A1F44] text-white py-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Solutions</h1>
-          <p className="text-xl text-gray-200 max-w-3xl">
-            Comprehensive IT, cybersecurity, data privacy, and compliance services tailored to your enterprise needs
-          </p>
+      <section className="hero-gradient text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 tech-grid" />
+        <div className="content-container relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Solutions
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-slate-100">
+            </h2>
+            <p className="text-lg text-slate-200 max-w-3xl mx-auto leading-relaxed">
+              We deliver integrated regulatory, governance, and technology compliance solutions designed for highly regulated and risk-sensitive industries. Our services combine pharmaceutical-grade validation practices, privacy governance, cybersecurity resilience, and enterprise risk alignment to ensure sustainable compliance and operational excellence.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Solutions Grid */}
+      {/* Solutions Detail Sections */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {solutions.map((solution) => (
-              <Link
-                key={solution.slug}
-                to={`/solutions/${solution.slug}`}
-                className="card-enterprise group"
-              >
-                <div className="mb-4">
-                  {solution.image ? (
-                    <img
-                      src={solution.image}
-                      alt={solution.title}
-                      className="w-16 h-16 object-contain mx-auto"
-                    />
-                  ) : (
-                    <div className="text-5xl">{solution.icon}</div>
-                  )}
+        <div className="content-container">
+          <div className="max-w-5xl mx-auto space-y-12">
+            {solutions.map((solution, index) => (
+              <div key={index} className="border-b border-slate-200 pb-12 last:border-b-0">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="text-5xl flex-shrink-0">{solution.icon}</div>
+                  <div className="flex-grow">
+                    <h2 className="text-3xl font-bold text-primary-navy mb-2">{solution.title}</h2>
+                    <p className="text-lg text-slate-600 font-medium">{solution.subheading}</p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 transition-colors">
-                  {solution.title}
-                </h3>
-                <p className="text-white/85 mb-4">{solution.description}</p>
-                <div className="mb-4">
-                  <div className="text-sm font-semibold text-white mb-2">Key Services:</div>
-                  <ul className="space-y-1">
-                    {solution.features.map((feature, index) => (
-                      <li key={index} className="text-sm text-white/85 flex items-start">
-                        <span className="text-accent-cyan mr-2">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+
+                <div className="ml-20 space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900 mb-3">Overview</h3>
+                    <p className="text-slate-700 leading-relaxed">{solution.overview}</p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900 mb-4">
+                      {solution.title.includes('Certification') || solution.title.includes('ISO Certifications') ? 'Supported Standards' : 'Our Services'}
+                    </h3>
+                    <ul className="space-y-3">
+                      {solution.services.map((service, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <span className="text-accent-cyan font-bold flex-shrink-0">✓</span>
+                          <span className="text-slate-700">{service}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="text-primary-teal font-semibold flex items-center mt-4">
-                  Learn More
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -123,11 +153,11 @@ const Solutions = () => {
 
       {/* CTA Section */}
       <section className="py-16 text-white" style={{background: 'linear-gradient(135deg, #0A1F44, #1E4E8C)'}}>
-        <div className="container mx-auto px-4 lg:px-8 text-center">
+        <div className="content-container text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Need a Custom Solution?
           </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
             Our experts can tailor solutions to meet your specific compliance and security requirements.
           </p>
           <Link

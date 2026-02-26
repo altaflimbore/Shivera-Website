@@ -155,11 +155,18 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-                <p className="text-gray-500 font-medium">
-                  Google Map Placeholder
-                </p>
+              {/* Embedded Google Map */}
+              <div className="mt-8 rounded-xl overflow-hidden shadow-lg h-[350px] w-full">
+                <iframe
+                  title="Shivera Infotech Location"
+                  src="https://www.google.com/maps?q=B103,%20Vastu%20Nirvana,%20Baner-Pashan%20Link%20Road,%20Pune%20411021&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
 

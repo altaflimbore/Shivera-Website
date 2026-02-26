@@ -105,7 +105,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary-navy/60 via-primary-navy/50 to-primary-navy/70 z-1" />
 
         {/* Premium trust signals */}
-        <div className="absolute top-8 right-8 flex gap-2 opacity-90 z-20">
+        <div className="absolute top-12 right-8 flex gap-2 opacity-90 z-20">
           <span className="badge-cyan text-white bg-accent-cyan/20 border-accent-cyan/40">🛡️ ISO 27001</span>
           <span className="badge-cyan text-white bg-accent-cyan/20 border-accent-cyan/40">🔒 GDPR Aligned</span>
           <span className="badge-cyan text-white bg-accent-cyan/20 border-accent-cyan/40">✓ DPDP Ready</span>
@@ -119,11 +119,11 @@ const Home = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto mb-6 text-balance">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center max-w-4xl mx-auto mb-6 text-balance">
               Empowering Organizations with Trusted IT, Data Privacy, and Compliance Solutions
             </h1>
 
-            <p className="text-lg md:text-xl text-center max-w-3xl mx-auto text-slate-200 mb-10 leading-relaxed">
+            <p className="text-base md:text-lg text-center max-w-3xl mx-auto text-slate-200 mb-10 leading-relaxed">
               We empower enterprises to operate securely and confidently through expert-led pharmaceutical regulatory compliance, IT governance, cybersecurity, data privacy, and legal compliance programs designed for long-term sustainability.
             </p>
 
@@ -228,7 +228,7 @@ const Home = () => {
       </section>
 
       {/* Premium Final CTA Section */}
-      <section className="bg-gradient-to-r from-accent-indigo to-accent-indigo-dark text-white section-spacing relative overflow-hidden">
+      <section className="hero-gradient text-white section-spacing relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 tech-grid" />
         
         <div className="content-container text-center relative z-10 animate-fade-in">

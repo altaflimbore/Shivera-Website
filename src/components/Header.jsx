@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom"
 import logoIcon from "../assets/logo-icon.png"
 import logoText from "../assets/logo-text.png"
 
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -101,7 +102,7 @@ const Header = () => {
       {/* Primary Navbar — compact & structured */}
       <nav className="content-container">
         <div className={`flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? "h-12" : "h-14"
+          isScrolled ? "h-14" : "h-18"
         }`}>
 
           <Link to="/" className="flex items-center gap-3 transition-opacity duration-200">
@@ -109,11 +110,11 @@ const Header = () => {
               src="/src/assets/logo-icon.png"
               alt="Shivera Infotech Logo"
               className={`transition-all duration-200 ${
-                isScrolled ? "h-7 w-auto" : "h-9 w-auto"
+                isScrolled ? "h-8 w-auto" : "h-11 w-auto"
               }`}
             />
             <span className={`font-semibold tracking-wide text-slate-900 transition-all duration-200 ${
-              isScrolled ? "text-sm" : "text-base"
+              isScrolled ? "text-sm" : "text-lg"
             }`}>
               SHIVERA INFOTECH
             </span>
@@ -123,7 +124,7 @@ const Header = () => {
             {/* Desktop Menu */}
             <div
               ref={dropdownRef}
-              className="hidden lg:flex items-center gap-6 text-sm font-medium whitespace-nowrap"
+              className="hidden lg:flex items-center gap-8 text-base font-medium whitespace-nowrap"
             >
               {/* Links */}
               <Link
@@ -211,7 +212,7 @@ const Header = () => {
               {/* Compact CTA */}
               <Link
                 to="/meeting"
-                className="ml-4 whitespace-nowrap px-3 py-1.5 rounded-md bg-primary-navy text-white font-semibold shadow-sm hover:opacity-95 transition duration-150"
+                className="ml-4 whitespace-nowrap px-5 py-2.5 rounded-md bg-primary-navy text-white font-semibold shadow-sm hover:opacity-95 transition duration-150 text-sm"
               >
                 📅 Schedule
               </Link>
