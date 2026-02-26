@@ -62,7 +62,7 @@ const Testimonials = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 md:p-12 shadow-xl relative">
+            <div className="card-enterprise p-8 md:p-12 relative">
               <div className="text-center mb-6">
                 <div className="flex justify-center items-center mb-4">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
@@ -71,13 +71,13 @@ const Testimonials = () => {
                     </svg>
                   ))}
                 </div>
-                <p className="text-xl text-gray-700 italic mb-6 leading-relaxed">
+                <p className="text-xl text-white/90 italic mb-6 leading-relaxed">
                   "{testimonials[currentIndex].feedback}"
                 </p>
-                <div className="text-2xl font-bold text-primary-navy mb-2">
+                <div className="text-2xl font-bold text-white mb-2">
                   {testimonials[currentIndex].company}
                 </div>
-                <div className="text-gray-600">
+                <div className="text-white/85">
                   {testimonials[currentIndex].author}
                 </div>
               </div>
@@ -123,11 +123,11 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-8 text-center">
             All Testimonials
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all"
+                className="card-enterprise"
               >
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -136,9 +136,9 @@ const Testimonials = () => {
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4 italic">"{testimonial.feedback}"</p>
-                <div className="font-semibold text-primary-navy">{testimonial.company}</div>
-                <div className="text-sm text-gray-600">{testimonial.author}</div>
+                <p className="text-white/90 mb-4 italic">"{testimonial.feedback}"</p>
+                <div className="font-semibold text-white">{testimonial.company}</div>
+                <div className="text-sm text-white/85">{testimonial.author}</div>
               </div>
             ))}
           </div>

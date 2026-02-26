@@ -81,7 +81,7 @@ const Solutions = () => {
               <Link
                 key={solution.slug}
                 to={`/solutions/${solution.slug}`}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 border border-gray-100 group"
+                className="card-enterprise group"
               >
                 <div className="mb-4">
                   {solution.image ? (
@@ -94,16 +94,16 @@ const Solutions = () => {
                     <div className="text-5xl">{solution.icon}</div>
                   )}
                 </div>
-                <h3 className="text-2xl font-bold text-primary-navy mb-3 group-hover:text-primary-teal transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-3 transition-colors">
                   {solution.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{solution.description}</p>
+                <p className="text-white/85 mb-4">{solution.description}</p>
                 <div className="mb-4">
-                  <div className="text-sm font-semibold text-primary-navy mb-2">Key Services:</div>
+                  <div className="text-sm font-semibold text-white mb-2">Key Services:</div>
                   <ul className="space-y-1">
                     {solution.features.map((feature, index) => (
-                      <li key={index} className="text-sm text-gray-600 flex items-start">
-                        <span className="text-primary-teal mr-2">•</span>
+                      <li key={index} className="text-sm text-white/85 flex items-start">
+                        <span className="text-accent-cyan mr-2">•</span>
                         {feature}
                       </li>
                     ))}

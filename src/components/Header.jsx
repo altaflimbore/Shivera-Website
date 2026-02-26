@@ -13,14 +13,22 @@ const Header = () => {
   const dropdownRef = useRef(null)
   const closeTimeoutRef = useRef(null)
 
-  // ✅ Scroll Effect
+  // ✅ Scroll Effect (disabled on Home page)
   useEffect(() => {
+    if (location.pathname === "/") {
+      setIsScrolled(false)
+      return
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
+
     window.addEventListener("scroll", handleScroll)
+    // run once to set initial state
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [location.pathname])
 
   // ✅ Close Dropdown Outside Click
   useEffect(() => {
@@ -69,22 +77,20 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-white shadow-card backdrop-blur-md"
-          : "bg-white/98 backdrop-blur-md"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+        isScrolled ? "bg-white shadow-sm border-white/10" : "bg-white border-white/10"
       }`}
     >
-      {/* ✅ Premium Top Info Bar */}
+      {/* Top Contact Bar — slim */}
       <div className="bg-primary-navy text-white text-xs sm:text-sm font-medium">
-        <div className="content-container py-2.5">
+        <div className="content-container py-1">
           <div className="hidden md:flex items-center justify-between">
             <span className="flex items-center gap-2">✉️ info@shiverainfotech.com</span>
             <span className="flex items-center gap-2">📞 8087250238 | 7887888171</span>
             <span className="flex items-center gap-2">📍 Baner-Pashan Link Road, Pune 411021</span>
           </div>
 
-          <div className="md:hidden flex flex-col items-center gap-2 text-center text-white">
+          <div className="md:hidden flex flex-col items-center gap-1 text-center text-white">
             <span>✉️ info@shiverainfotech.com</span>
             <span>📞 8087250238 | 7887888171</span>
             <span>📍 Baner-Pashan Link Road, Pune 411021</span>
@@ -92,21 +98,21 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ✅ Premium Navbar */}
+      {/* Primary Navbar — compact & structured */}
       <nav className="content-container">
-        <div className={`flex items-center justify-between transition-all duration-500 ${
-          isScrolled ? "h-14" : "h-16"
+        <div className={`flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? "h-12" : "h-14"
         }`}>
 
-          <Link to="/" className="flex items-center gap-3 hover:opacity-85 transition-opacity duration-300">
+          <Link to="/" className="flex items-center gap-3 transition-opacity duration-200">
             <img
               src="/src/assets/logo-icon.png"
               alt="Shivera Infotech Logo"
-              className={`transition-all duration-500 ${
-                isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+              className={`transition-all duration-200 ${
+                isScrolled ? "h-7 w-auto" : "h-9 w-auto"
               }`}
             />
-            <span className={`font-bold tracking-wider text-slate-900 transition-all duration-500 ${
+            <span className={`font-semibold tracking-wide text-slate-900 transition-all duration-200 ${
               isScrolled ? "text-sm" : "text-base"
             }`}>
               SHIVERA INFOTECH
@@ -122,8 +128,8 @@ const Header = () => {
               {/* Links */}
               <Link
                 to="/"
-                className={`transition-all duration-300 ${
-                  isActive("/") ? "text-primary-navy font-bold" : "text-slate-700 hover:text-accent-cyan"
+                className={`transition-colors duration-150 tracking-wide ${
+                  isActive("/") ? "text-primary-navy font-semibold" : "text-slate-900 hover:text-primary-navy"
                 }`}
               >
                 Home
@@ -131,10 +137,10 @@ const Header = () => {
 
               <Link
                 to="/about"
-                className={`transition-all duration-300 ${
+                className={`transition-colors duration-150 tracking-wide ${
                   isActive("/about")
-                    ? "text-primary-navy font-bold"
-                    : "text-slate-700 hover:text-accent-cyan"
+                    ? "text-primary-navy font-semibold"
+                    : "text-slate-900 hover:text-primary-navy"
                 }`}
               >
                 About Us
@@ -146,20 +152,18 @@ const Header = () => {
                 onMouseEnter={() => openDropdown("solutions")}
                 onMouseLeave={closeDropdown}
               >
-                <button className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium flex items-center gap-1">
+                <button className="text-slate-900 hover:text-primary-navy transition-colors duration-150 font-medium flex items-center gap-1">
                   Solutions <span className="text-xs">▾</span>
                 </button>
 
                 {activeDropdown === "solutions" && (
-                  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-card border border-slate-200 py-2 animate-fade-in">
+                  <div className="absolute top-full left-0 mt-3 w-64 card-enterprise py-2">
                     {solutionsItems.map((item) => (
                       <Link
                         key={item.slug}
                         to={`/solutions/${item.slug}`}
-                        className={`block px-4 py-2 text-sm transition-all duration-200 ${
-                          isActive(`/solutions/${item.slug}`)
-                            ? "text-accent-cyan bg-accent-cyan/10 font-medium"
-                            : "text-slate-700 hover:bg-slate-50 hover:text-accent-cyan"
+                        className={`block px-4 py-2 text-sm text-white/85 transition-all duration-150 hover:bg-white/5 hover:text-white ${
+                          isActive(`/solutions/${item.slug}`) ? 'font-semibold text-white' : ''
                         }`}
                       >
                         {item.name}
@@ -175,20 +179,18 @@ const Header = () => {
                 onMouseEnter={() => openDropdown("training")}
                 onMouseLeave={closeDropdown}
               >
-                <button className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium flex items-center gap-1">
+                <button className="text-slate-900 hover:text-primary-navy transition-colors duration-150 font-medium flex items-center gap-1">
                   Training <span className="text-xs">▾</span>
                 </button>
 
                 {activeDropdown === "training" && (
-                  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-card border border-slate-200 py-2 animate-fade-in">
+                  <div className="absolute top-full left-0 mt-3 w-64 card-enterprise py-2">
                     {trainingItems.map((item, index) => (
                       <Link
                         key={index}
                         to={`/training#${item.slug}`}
-                        className={`block px-4 py-2 text-sm transition-all duration-200 ${
-                          location.pathname === "/training" && location.hash === `#${item.slug}`
-                            ? "text-accent-cyan bg-accent-cyan/10 font-medium"
-                            : "text-slate-700 hover:bg-slate-50 hover:text-accent-cyan"
+                        className={`block px-4 py-2 text-sm text-white/85 transition-all duration-150 hover:bg-white/5 hover:text-white ${
+                          location.pathname === "/training" && location.hash === `#${item.slug}` ? 'font-semibold text-white' : ''
                         }`}
                       >
                         {item.name}
@@ -198,27 +200,28 @@ const Header = () => {
                 )}
               </div>
 
-              <Link to="/testimonials" className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium whitespace-nowrap">Testimonials</Link>
+              <Link to="/testimonials" className="text-slate-900 hover:text-primary-navy transition-colors duration-150 font-medium whitespace-nowrap">Testimonials</Link>
 
-              <Link to="/careers" className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium whitespace-nowrap">Careers</Link>
+              <Link to="/careers" className="text-slate-900 hover:text-primary-navy transition-colors duration-150 font-medium whitespace-nowrap">Careers</Link>
 
-              <Link to="/collaboration" className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium whitespace-nowrap">Why Us</Link>
+              <Link to="/collaboration" className="text-slate-900 hover:text-primary-navy transition-colors duration-150 font-medium whitespace-nowrap">Why Us</Link>
 
-              <Link to="/contact" className="text-slate-700 hover:text-accent-cyan transition-colors duration-300 font-medium whitespace-nowrap">Contact</Link>
+              <Link to="/contact" className="text-slate-900 hover:text-primary-navy transition-colors duration-150 font-medium whitespace-nowrap">Contact</Link>
 
-              {/* ✅ Premium CTA Button */}
+              {/* Compact CTA */}
               <Link
                 to="/meeting"
-                className="btn-accent ml-4 whitespace-nowrap"
+                className="ml-4 whitespace-nowrap px-3 py-1.5 rounded-md bg-primary-navy text-white font-semibold shadow-sm hover:opacity-95 transition duration-150"
               >
-                📅 Schedule Consultation
+                📅 Schedule
               </Link>
             </div>
 
             {/* ✅ Mobile Button */}
             <button
-              className="lg:hidden text-3xl text-primary-navy hover:text-accent-cyan transition-colors duration-300"
+              className="lg:hidden text-2xl text-primary-navy hover:text-primary-navy/80 transition-colors duration-150"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               ☰
             </button>

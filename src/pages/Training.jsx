@@ -9,7 +9,7 @@ const Training = () => {
       const id = location.hash.substring(1)
       const element = document.getElementById(id)
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
+        element.scrollIntoView({ block: 'start' })
       }
     }
   }, [location])
@@ -99,14 +99,14 @@ const Training = () => {
               <div
                 id={program.slug}
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 border border-gray-100 flex flex-col"
+                className="card-enterprise flex flex-col"
               >
                 {/* Icon */}
                 <div className="text-5xl mb-4">{program.icon}</div>
 
                 {/* Title + Badge */}
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold text-primary-navy">
+                  <h3 className="text-xl font-bold text-white">
                     {program.title}
                   </h3>
                   <span className="bg-[#1B3A6B] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
@@ -115,11 +115,11 @@ const Training = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-4">{program.description}</p>
+                <p className="text-white/85 mb-4">{program.description}</p>
 
                 {/* Details */}
                 <div className="space-y-2 mb-6">
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-white/85">
                     <svg
                       className="w-5 h-5 mr-2 text-[#1E4E8C]"
                       fill="none"
@@ -136,7 +136,7 @@ const Training = () => {
                     Duration: {program.duration}
                   </div>
 
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-white/85">
                     <svg
                       className="w-5 h-5 mr-2 text-[#1E4E8C]"
                       fill="none"
@@ -157,10 +157,8 @@ const Training = () => {
                 {/* Enroll Button Fixed at Bottom */}
                 <Link
                   to="/contact"
-                  className="mt-auto block w-full text-white text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                  style={{background: 'linear-gradient(135deg, #1E4E8C, #274C8E)', boxShadow: '0 8px 20px rgba(0,0,0,0.15)'}}
-                  onMouseEnter={(e) => {e.currentTarget.style.background = 'linear-gradient(135deg, #274C8E, #325FAE)'}}
-                  onMouseLeave={(e) => {e.currentTarget.style.background = 'linear-gradient(135deg, #1E4E8C, #274C8E)'}}
+                  className="mt-auto block w-full text-white text-center px-6 py-3 rounded-md font-semibold transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+                  style={{background: 'linear-gradient(135deg, #1E4E8C, #274C8E)'}}
                 >
                   Enroll Now
                 </Link>
@@ -201,12 +199,12 @@ const Training = () => {
                   desc: "Hands-on exercises and case studies from real implementations",
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-md">
+                <div key={index} className="card-enterprise">
                   <div className="text-4xl mb-3">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-primary-navy mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  <p className="text-white/85">{item.desc}</p>
                 </div>
               ))}
             </div>

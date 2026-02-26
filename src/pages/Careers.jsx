@@ -61,13 +61,13 @@ const Careers = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-8 text-center">
               Current Openings
             </h2>
-            <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
+            <div className="card-enterprise">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-primary-navy mb-1">
+                  <h3 className="text-2xl font-bold text-white mb-1">
                     SAP FICO Consultant
                   </h3>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-white/85">
                     Experience: 6+ Years · Job Type: Full-Time · Location: India / Hybrid
                   </p>
                 </div>
@@ -75,14 +75,14 @@ const Careers = () => {
                   Open Position
                 </span>
               </div>
-              <p className="text-gray-700 mb-4">
+              <p className="text-white/85 mb-4">
                 We are seeking an experienced SAP FICO Consultant with strong expertise in SAP Financial
                 Accounting (FI) and Controlling (CO) to support our enterprise clients.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="text-lg font-semibold text-primary-navy mb-2">Responsibilities</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                  <h4 className="text-lg font-semibold text-white mb-2">Responsibilities</h4>
+                  <ul className="list-disc list-inside text-white/85 space-y-1 text-sm">
                     <li>SAP FICO implementation, configuration, and ongoing support</li>
                     <li>Requirement gathering and mapping of finance processes</li>
                     <li>Configure FI modules: GL, AP, AR, Asset Accounting, Banking</li>
@@ -92,8 +92,8 @@ const Careers = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary-navy mb-2">Skills Required</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                  <h4 className="text-lg font-semibold text-white mb-2">Skills Required</h4>
+                  <ul className="list-disc list-inside text-white/85 space-y-1 text-sm">
                     <li>Minimum 6+ years of hands-on SAP FICO experience</li>
                     <li>Strong understanding of finance and controlling processes</li>
                     <li>Experience with SAP S/4HANA Finance is an added advantage</li>
@@ -107,8 +107,6 @@ const Careers = () => {
                   to="/contact"
                   className="inline-block px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0.5"
                   style={{background: 'linear-gradient(135deg, #1E4E8C, #274C8E)', color: 'white', boxShadow: '0 10px 25px rgba(10, 31, 68, 0.2)'}}
-                  onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #274C8E, #325FAE)'}
-                  onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(135deg, #1E4E8C, #274C8E)'}
                 >
                   📧 Apply / Share Your Profile
                 </Link>
@@ -132,10 +130,10 @@ const Careers = () => {
                 { icon: '🤝', title: 'Collaborative Culture', desc: 'Work in a supportive environment that values teamwork and knowledge sharing' },
                 { icon: '📈', title: 'Career Growth', desc: 'Clear growth paths and opportunities to develop expertise in multiple domains' },
               ].map((item, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-md">
+                <div key={index} className="card-enterprise">
                   <div className="text-4xl mb-3">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-primary-navy mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-white/85">{item.desc}</p>
                 </div>
               ))}
             </div>

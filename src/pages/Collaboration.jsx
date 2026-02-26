@@ -85,13 +85,13 @@ const Collaboration = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all"
+                  className="card-enterprise"
                 >
                   <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-primary-navy mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  <p className="text-white/85">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -134,13 +134,13 @@ const Collaboration = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all"
+                  className="card-enterprise"
                 >
                   <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-primary-navy mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  <p className="text-white/85">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -171,12 +171,12 @@ const Collaboration = () => {
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
+                  className="card-enterprise text-center"
                 >
-                  <h3 className="text-3xl font-bold text-[#1E4E8C] mb-2">
+                  <h3 className="text-3xl font-bold text-white mb-2">
                     {stat.number}
                   </h3>
-                  <p className="text-gray-700 font-medium">{stat.label}</p>
+                  <p className="text-white/85 font-medium">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -217,16 +217,16 @@ const Collaboration = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-md flex gap-6 items-start"
+                  className="card-enterprise flex gap-6 items-start"
                 >
-                  <div className="text-2xl font-bold text-[#1E4E8C]">
+                  <div className="text-2xl font-bold text-accent-cyan">
                     {item.step}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-primary-navy mb-1">
+                    <h3 className="text-xl font-bold text-white mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600">{item.desc}</p>
+                    <p className="text-white/85">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -252,13 +252,13 @@ const Collaboration = () => {
               {partners.map((partner, index) => (
                 <div
                   key={index}
-                  className="bg-[#F8FAFC] rounded-xl p-8 border border-[#E2E8F0] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="card-enterprise"
                 >
                   <div className="text-5xl mb-4">{partner.icon}</div>
-                  <h3 className="text-2xl font-bold text-[#0A1F44] mb-3">
+                  <h3 className="text-2xl font-bold text-white mb-3">
                     {partner.name}
                   </h3>
-                  <p className="text-gray-600 mb-6">{partner.description}</p>
+                  <p className="text-white/85 mb-6">{partner.description}</p>
 
                   <Link
                     to="/contact"

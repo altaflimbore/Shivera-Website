@@ -5,7 +5,7 @@ const CookiePopup = ({ onAccept, onReject }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-2xl max-w-2xl w-full p-6 md:p-8 animate-fadeIn">
+      <div className="card-enterprise rounded-lg max-w-2xl w-full p-6 md:p-8 animate-fadeIn">
         {!showPrivacy ? (
           <>
             <div className="flex items-start mb-4">
@@ -15,13 +15,13 @@ const CookiePopup = ({ onAccept, onReject }) => {
                 </svg>
               </div>
               <div className="ml-4 flex-1">
-                <h3 className="text-xl font-bold text-primary-navy mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   Cookie & Data Privacy Compliance
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-white/85 mb-4">
                   This website uses cookies and follows data privacy compliance standards to enhance your browsing experience and ensure data protection. By continuing, you agree to our data privacy practices aligned with DPDP and GDPR standards.
                 </p>
-                <p className="text-sm text-gray-600 mb-6">
+                <p className="text-sm text-white/85 mb-6">
                   Please accept to continue browsing our website.
                 </p>
               </div>
@@ -29,19 +29,19 @@ const CookiePopup = ({ onAccept, onReject }) => {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={onAccept}
-                className="flex-1 bg-primary-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-md hover:shadow-lg"
+                className="flex-1 bg-accent-cyan text-white px-6 py-3 rounded-lg font-semibold hover:opacity-95 transition-all shadow-sm"
               >
                 ✅ Accept All
               </button>
               <button
                 onClick={onReject}
-                className="flex-1 bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-all"
+                className="flex-1 bg-white/10 text-white/85 px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all"
               >
                 ❌ Reject Non-Essential
               </button>
               <button
                 onClick={() => setShowPrivacy(true)}
-                className="flex-1 border-2 border-primary-teal text-primary-teal px-6 py-3 rounded-lg font-semibold hover:bg-primary-teal hover:text-white transition-all"
+                className="flex-1 border-2 border-accent-cyan text-accent-cyan px-6 py-3 rounded-lg font-semibold hover:bg-accent-cyan/10 hover:text-white transition-all"
               >
                 📄 View Privacy Policy
               </button>
@@ -50,7 +50,7 @@ const CookiePopup = ({ onAccept, onReject }) => {
         ) : (
           <div>
             <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-bold text-primary-navy">Data Privacy Policy</h3>
+            <h3 className="text-xl font-bold text-white">Data Privacy Policy</h3>
               <button
                 onClick={() => setShowPrivacy(false)}
                 className="text-gray-500 hover:text-gray-700"
@@ -62,9 +62,9 @@ const CookiePopup = ({ onAccept, onReject }) => {
             </div>
             <div className="max-h-96 overflow-y-auto text-gray-700 space-y-4 mb-6">
               <p>
-                <strong>SHIVERA INFOTECH LLP Data Privacy Policy</strong>
+                <strong className="text-white">SHIVERA INFOTECH LLP Data Privacy Policy</strong>
               </p>
-              <p>
+              <p className="text-white/85">
                 We are committed to protecting your data privacy and ensuring compliance with data protection regulations including the Digital Personal Data Protection Act (DPDP) and GDPR.
               </p>
               <p>
@@ -86,13 +86,13 @@ const CookiePopup = ({ onAccept, onReject }) => {
             <div className="flex gap-3">
               <button
                 onClick={onAccept}
-                className="flex-1 bg-primary-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+                className="flex-1 bg-accent-cyan text-white px-6 py-3 rounded-lg font-semibold hover:opacity-95 transition-all"
               >
                 ✅ Accept All
               </button>
               <button
                 onClick={onReject}
-                className="flex-1 bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-all"
+                className="flex-1 bg-white/10 text-white/85 px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all"
               >
                 ❌ Reject Non-Essential
               </button>

@@ -23,11 +23,11 @@ function ScrollToHash() {
       const id = location.hash.replace('#', '')
       const el = document.getElementById(id)
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        el.scrollIntoView({ block: 'start' })
         return
       }
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0 })
   }, [location.pathname, location.hash])
 
   return null
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col scroll-smooth relative">
+      <div className="min-h-screen flex flex-col relative">
         <BackgroundGraphics />
         <ScrollToHash />
         <Header />

@@ -8,7 +8,6 @@
   }
 
   * {
-    @apply scroll-smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -28,7 +27,8 @@
 
   /* Card Components */
   .card-base {
-    @apply bg-white rounded-lg border border-slate-200 shadow-lg transition-all duration-300;
+    /* legacy - replaced by .card-enterprise */
+    @apply transition-all duration-300;
   }
 
   .card-hover {
@@ -36,7 +36,35 @@
   }
 
   .card-premium {
-    @apply bg-white rounded-xl border border-slate-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    /* legacy - replaced by .card-enterprise */
+    @apply transition-all duration-300;
+  }
+
+  /* Enterprise-grade unified card style */
+  .card-enterprise {
+    background: linear-gradient(135deg, #0B1E3C 0%, #1E3A5F 100%);
+    color: #ffffff;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 6px 18px rgba(3, 10, 25, 0.35);
+    padding: 1.5rem; /* p-6 */
+    transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
+  }
+
+  .card-enterprise h3,
+  .card-enterprise h2,
+  .card-enterprise p,
+  .card-enterprise a,
+  .card-enterprise span {
+    color: #ffffff;
+  }
+
+  .card-enterprise .muted {
+    color: rgba(255,255,255,0.85);
+  }
+
+  .card-enterprise:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(3, 10, 25, 0.45);
   }
 
   /* Button Components */
@@ -127,9 +155,7 @@
 }
 
 @layer utilities {
-  .scroll-smooth {
-    scroll-behavior: smooth;
-  }
+  /* smooth scrolling removed */
 
   .text-balance {
     text-wrap: balance;

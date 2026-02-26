@@ -120,7 +120,7 @@ const Home = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto mb-6 text-balance">
-              Trusted IT, Data Privacy, and Compliance Excellence for Regulated Industries
+              Empowering Organizations with Trusted IT, Data Privacy, and Compliance Solutions
             </h1>
 
             <p className="text-lg md:text-xl text-center max-w-3xl mx-auto text-slate-200 mb-10 leading-relaxed">
@@ -132,7 +132,7 @@ const Home = () => {
               {/* Primary CTA: Schedule Consultation */}
               <Link
                 to="/meeting"
-                className="btn-accent text-center inline-block"
+                className="px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-block text-center border-2 border-accent-cyan text-white bg-gradient-to-r from-accent-cyan/20 to-accent-cyan/10 hover:from-accent-cyan/30 hover:to-accent-cyan/20"
               >
                 📅 Schedule a Consultation
               </Link>
@@ -142,7 +142,7 @@ const Home = () => {
                 href="https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa?pageTitle=Digital-Personal-Data-Protection-Rules-2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary text-center inline-block"
+                className="px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-block text-center border-2 border-accent-cyan text-white bg-gradient-to-r from-accent-cyan/20 to-accent-cyan/10 hover:from-accent-cyan/30 hover:to-accent-cyan/20"
               >
                 📋 Learn More About DPDP Act
               </a>
@@ -159,7 +159,7 @@ const Home = () => {
             </div>
 
             <p className="text-base md:text-lg text-center max-w-2xl mx-auto text-slate-300 mb-8 leading-relaxed font-medium">
-              Schedule a consultation to evaluate your pharmaceutical GxP and CSV compliance, data privacy governance, legal regulatory obligations, and cybersecurity posture.
+              
             </p>
 
             {/* Premium Stats Cards */}
@@ -173,12 +173,12 @@ const Home = () => {
                 ({ icon, text, desc }, i) => (
                   <div
                     key={i}
-                    className="bg-white/10 backdrop-blur-md rounded-lg p-4 hover:bg-white/20 transition-all duration-300 animate-fade-in-up border border-white/10"
+                    className="card-enterprise p-4 animate-fade-in-up"
                     style={{ animationDelay: `${i * 0.1}s` }}
                   >
                     <div className="text-3xl mb-2">{icon}</div>
-                    <div className="text-sm font-semibold">{text}</div>
-                    <div className="text-xs text-slate-300">{desc}</div>
+                    <div className="text-sm font-semibold text-white">{text}</div>
+                    <div className="text-xs text-white/85">{desc}</div>
                   </div>
                 )
               )}
@@ -204,7 +204,7 @@ const Home = () => {
               <Link
                 key={index}
                 to={`/solutions/${solution.slug}`}
-                className="group card-premium p-8 animate-fade-in-up hover:border-accent-cyan/30 hover:-translate-y-2"
+                className="group card-enterprise animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-center mb-4">
@@ -212,10 +212,10 @@ const Home = () => {
                     <span className="text-3xl">{solution.icon}</span>
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2 leading-tight">
+                <h3 className="text-lg font-semibold text-white mb-2 leading-tight">
                   {solution.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-white/80 text-sm leading-relaxed">
                   {solution.description}
                 </p>
                 <div className="mt-4 text-accent-cyan font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
@@ -227,49 +227,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Premium Testimonials Section */}
-      <section className="section-spacing bg-white">
-        <div className="content-container">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Trusted by Industry Leaders
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Organizations worldwide rely on our expertise for secure, compliant operations
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="card-premium p-8 animate-fade-in-up flex flex-col"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-center mb-4">
-                  <div className="flex text-accent-cyan gap-0.5">
-                    {"★".repeat(testimonial.rating)}
-                  </div>
-                </div>
-                <p className="text-slate-600 mb-6 italic leading-relaxed flex-grow">
-                  "{testimonial.feedback}"
-                </p>
-                <div className="font-semibold text-slate-900">
-                  {testimonial.company}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Premium Final CTA Section */}
       <section className="bg-gradient-to-r from-accent-indigo to-accent-indigo-dark text-white section-spacing relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 tech-grid" />
         
         <div className="content-container text-center relative z-10 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Ready to Strengthen Your Foundation?
+           Schedule a consultation to evaluate your pharmaceutical GxP and CSV compliance, data privacy governance, legal regulatory obligations, and cybersecurity posture.
           </h2>
 
           <p className="text-lg text-indigo-100 mb-10 max-w-2xl mx-auto leading-relaxed">

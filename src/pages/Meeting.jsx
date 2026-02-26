@@ -48,8 +48,10 @@ const Meeting = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-center mb-10">Schedule a Consultation</h1>
 
-        <div className="bg-white shadow-xl rounded-2xl p-6 md:p-10">
-          <div id="meeting-scheduler" className="w-full" style={{ minHeight: "650px" }}></div>
+        <div className="card-enterprise rounded-2xl p-6 md:p-10">
+          <div className="bg-white rounded-lg p-0" style={{ minHeight: "650px" }}>
+            <div id="meeting-scheduler" className="w-full" style={{ minHeight: "650px" }}></div>
+          </div>
         </div>
       </div>
     </div>
